@@ -21,10 +21,6 @@ ActiveRecord::Schema.define(version: 2020_09_26_132937) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "title"
     t.string "auther_name"
-    t.integer "qr_position_x"
-    t.integer "qr_position_y"
-    t.integer "serial_position_x"
-    t.integer "serial_position_y"
   end
 
   create_table "license_groups", force: :cascade do |t|
