@@ -1,0 +1,77 @@
+<main>
+  <div class="container">
+    <h2 class="my-3">新しいカードを作成</h2>
+    <%=form_with model: @card, local: true do |f|%>
+      <div class="form-group">
+        <%= f.label "タイトル" %>
+        <%= f.text_field :title, class: "form-control", id: "title"%>
+      </div>
+      <div class="form-group">
+        <%= f.label "作成者" %>
+        <%= f.text_field :auther_name, class: "form-control", id: "auther_name"%>
+      </div>
+      <div class="form-group">
+        <%= f.label "コンテンツ" %>
+        <%= f.file_field :content, class: "form-control-file", id: "content"%>
+      </div>
+      <h3>表面のデザイン設定</h3>
+      <div class="form-group">
+        <%= f.label "カードの表の背景(1254px*758px)" %>
+        <%= f.file_field :card_img_front, class: "form-control-file", id: "card_img_front"%>
+      </div>
+      <h4>QRコードの位置調整</h4>
+      <button id="button-up">上</button>
+      <button id="button-down">下</button>
+      <button id="button-left">左</button>
+      <button id="button-right">右</button>
+      <div style="position: relative; width: 627px; height: 379px;margin: 0 auto;" id="card_container">
+        <div id="card" style="cursor: pointer;">
+          <%= image_tag 'sample.png', id: "background-preview", style: "width: 627px; height: 379px;" %>
+          <div style="background-color: white; width: 100px;height: 100px; position: absolute; top: 0px;left: 0px;" id="qr">
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label "qr_position_x" %>
+        <%= f.text_field :qr_position_x, class: "form-control", id: "qr-position-x"%>
+      </div>
+      <div class="form-group">
+        <%= f.label "qr_position_y" %>
+        <%= f.text_field :qr_position_y, class: "form-control", id: "qr-position-y"%>
+      </div>
+      <h3>裏面のデザイン設定</h3>
+      <div class="form-group">
+        <%= f.label "カードの裏の背景(1254px*758px)" %>
+        <%= f.file_field :card_img_back, class: "form-control-file", id: "card_img_back"%>
+      </div>
+      <h4>QRコードの位置調整</h4>
+      <button id="button-up-back">上</button>
+      <button id="button-down-back">下</button>
+      <button id="button-left-back">左</button>
+      <button id="button-right-back">右</button>
+      <div style="position: relative; width: 627px; height: 379px;margin: 0 auto;" id="card_container">
+        <div id="card_back" style="cursor: pointer;">
+          <%= image_tag 'sample.png', id: "background_preview_back", style: "width: 627px; height: 379px;" %>
+          <div style="background-color: white; width: 100px;height: 100px; position: absolute; top: 0px;left: 0px;" id="serial_code">
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label "serial_position_x" %>
+        <%= f.text_field :serial_position_x, class: "form-control", id: "serial_position_x"%>
+      </div>
+      <div class="form-group">
+        <%= f.label "serial_position_y" %>
+        <%= f.text_field :serial_position_y, class: "form-control", id: "serial_position_y"%>
+      </div>
+      <%= fields_for @license_group do |fin|%>
+      <div class="form-group">
+        <%= fin.label "作成するカードの枚数" %>
+        <%= fin.text_field :number_of_licenses, class: "form-control", id: "number_of_licenses"%>
+      </div>
+      <%end%>
+      <%= f.submit nil,class: 'btn btn-primary btn-raised'%>
+    <%end%>
+  </div>
+</main>
+<%= javascript_pack_tag 'cards', 'data-turbolinks-track': 'reload' %>

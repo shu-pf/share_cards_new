@@ -57,3 +57,10 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'rails-i18n', '~> 6.0.0'
+
+# ハッシュ生成
+gem 'hashids'
+# PDF生成
+gem 'prawn'
+# 環境変数
+gem 'dotenv-rails'

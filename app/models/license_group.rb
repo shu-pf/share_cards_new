@@ -1,0 +1,2 @@
+class LicenseGroup < ApplicationRecord
+end

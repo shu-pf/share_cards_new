@@ -1,2 +1,48 @@
-<h1>Cards#index</h1>
-<p>Find me in app/views/cards/index.html.erb</p>
+<main>
+  <div class="container">
+    <h2 class="my-3">発行済みカード一覧</h2>
+    <div class="d-md-none">
+      <% @cards.each do |card| %>
+      <div class="row mb-2 border-top pt-2">
+        <div class="col-4">
+          <div class="pr-1">
+            <%= image_tag card.card_design, class: "img-thumbnail", style: "object-fit: contain;" if card.card_design.attached? %>
+          </div>
+        </div>
+        <div class="col-8">
+          <h4>カエルの歌</h4>
+          <p style="margin-bottom: 3px;">作者名</p>
+          <div class="text-right">
+            <%= link_to "削除", card ,class: "btn btn-danger btn-outline btn-sm", method: :delete, data: { confirm: "削除してもよろしいですか？"} %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <div class="d-none d-md-block">
+      <% @cards.each do |card| %>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <div class="card" style="max-width: 25rem;">
+            <%= image_tag card.card_design, class: "card-img-top", style: "object-fit: contain;height: 200px;" if card.card_design.attached? %>
+            <div class="card-body">
+              <h4 class="card-title">カードの見出し</h4>
+              <h6 class="card-subtitle">カードの副見出し</h6>
+              <p class="card-text">カードの内容分が入ります。</p>
+              <%= link_to "削除", card ,class: "btn btn-danger btn-outline btn-sm", method: :delete, data: { confirm: "削除してもよろしいですか？"} %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <% if @cards.empty? %>
+    <div class="text-center my-5">
+      <h4>まだカードを作成していません。</h4>
+    </div>
+    <% end %>
+    <div class="text-right mb-3">
+      <%=link_to "新しいカードを作成する", new_card_path, class: "btn btn-primary btn-raised"%>
+    </div>
+  </div>
+</main>
