@@ -21,8 +21,8 @@
       <% end %>
     </div>
     <div class="d-none d-md-block">
-      <% @cards.each do |card| %>
       <div class="row">
+      <% @cards.each do |card| %>
         <div class="col-md-4 mb-3">
           <div class="card" style="max-width: 25rem;">
             <%= image_tag card.card_img, class: "card-img-top", style: "object-fit: contain;height: 200px;" if card.card_img.attached? %>
@@ -37,8 +37,8 @@
             </div>
           </div>
         </div>
-      </div>
       <% end %>
+      </div>
     </div>
     <% if @cards.empty? %>
     <div class="text-center my-5">

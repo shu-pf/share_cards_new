@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_26_185040) do
+ActiveRecord::Schema.define(version: 2020_09_27_171045) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,15 @@ ActiveRecord::Schema.define(version: 2020_09_26_185040) do
     t.integer "license_group_id"
     t.integer "user_id"
     t.string "serial_code"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "serial_tmps", force: :cascade do |t|
+    t.string "serial_code1"
+    t.string "serial_code2"
+    t.string "serial_code3"
+    t.string "serial_code4"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

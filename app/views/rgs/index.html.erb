@@ -1,0 +1,31 @@
+<main>
+  <div class="container">
+    <h2 class="my-3">ダウンロードカードの登録</h2>
+    <a href="listen.html" class="btn btn-outline-primary mb-3">戻る</a>
+    <%=form_with model: @serial_tmp, url: rgs_path, local: true do |f|%>
+      <div class="form-group">
+        <%= f.label :serial_code1, "シリアルコードを入力" %>
+        <div class="row">
+          <div class="col-3">
+            <%= f.text_field :serial_code1, class: "form-control", id: "serial_tmp_serial_code1"%>
+          </div>
+          <div class="col-3">
+            <%= f.text_field :serial_code2, class: "form-control", id: "serial_tmp_serial_code1"%>
+          </div>
+          <div class="col-3">
+            <%= f.text_field :serial_code3, class: "form-control", id: "serial_tmp_serial_code1"%>
+          </div>
+          <div class="col-3">
+            <%= f.text_field :serial_code4, class: "form-control", id: "serial_tmp_serial_code1"%>
+          </div>
+        </div>
+      </div>
+      <p>または、QRコードを読み取る事でも登録できます。</p>
+      <div class="text-right">
+        <%= f.submit nil,class: 'btn btn-primary btn-raised'%>
+        <fieldset disabled>
+          <a href="listen-registration-conf.html" class="btn btn-primary btn-raised">確認</a>
+        </fieldset>
+      </div>
+    <%end%>
+</main>

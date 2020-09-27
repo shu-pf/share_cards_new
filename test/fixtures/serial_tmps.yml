@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  serial_code1: 1
+  serial_code2: 1
+  serial_code3: 1
+  serial_code4: 1
+
+two:
+  serial_code1: 1
+  serial_code2: 1
+  serial_code3: 1
+  serial_code4: 1

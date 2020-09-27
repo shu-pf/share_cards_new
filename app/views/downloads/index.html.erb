@@ -1,2 +1,50 @@
-<h1>Downloads#index</h1>
-<p>Find me in app/views/downloads/index.html.erb</p>
+<main>
+  <div class="container">
+    <h2 class="my-3">登録済みカード一覧</h2>
+    <div class="d-md-none">
+      <% @licenses.each do |license| %>
+      <div class="row mb-2 border-top pt-2">
+        <div class="col-4">
+          <div class="pr-1">
+            <%= image_tag license.license_group.card.card_img, class: "img-thumbnail", style: "object-fit: contain;" if license.license_group.card.card_img.attached? %>
+          </div>
+        </div>
+        <div class="col-8">
+          <h4><%=license.license_group.card.title%></h4>
+          <p style="margin-bottom: 3px;"><%=license.license_group.card.auther_name%></p>
+          <div class="text-right">
+            <%#= link_to "ダウンロード", download_path(license.license_group.card) ,class: "btn btn-primary btn-outline btn-sm"%>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <div class="d-none d-md-block">
+      <div class="row">
+      <% @licenses.each do |license| %>
+        <div class="col-md-4 mb-3">
+          <div class="card" style="max-width: 25rem;">
+            <%= image_tag license.license_group.card.card_img, class: "card-img-top", style: "object-fit: contain;height: 200px;" if license.license_group.card.card_img.attached? %>
+            <div class="card-body">
+              <h4 class="card-title"><%=license.license_group.card.title%></h4>
+              <h6 class="card-subtitle"><%=license.license_group.card.auther_name%></h6>
+              <p class="card-text"></p>
+              <div class="text-right">
+                <%#= link_to "ダウンロード", download_path(license.license_group.card) ,class: "btn btn-primary btn-outline btn-sm"%>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      </div>
+    </div>
+    <% if @licenses.empty? %>
+    <div class="text-center my-5">
+      <h4>まだカードを作成していません。</h4>
+    </div>
+    <% end %>
+    <div class="text-right mb-3">
+      <%=link_to "新しいカードを登録する", rgs_path, class: "btn btn-primary btn-raised"%>
+    </div>
+  </div>
+</main>

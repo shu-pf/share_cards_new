@@ -1,0 +1,2 @@
+class SerialTmp < ApplicationRecord
+end
