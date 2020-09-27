@@ -6,13 +6,14 @@
       <div class="row mb-2 border-top pt-2">
         <div class="col-4">
           <div class="pr-1">
-            <%= image_tag card.card_design, class: "img-thumbnail", style: "object-fit: contain;" if card.card_design.attached? %>
+            <%= image_tag card.card_img, class: "img-thumbnail", style: "object-fit: contain;" if card.card_img.attached? %>
           </div>
         </div>
         <div class="col-8">
-          <h4>カエルの歌</h4>
-          <p style="margin-bottom: 3px;">作者名</p>
+          <h4><%=card.title%></h4>
+          <p style="margin-bottom: 3px;"><%=card.auther_name%></p>
           <div class="text-right">
+            <%= link_to "詳細", card_path(card) ,class: "btn btn-primary btn-outline btn-sm"%>
             <%= link_to "削除", card ,class: "btn btn-danger btn-outline btn-sm", method: :delete, data: { confirm: "削除してもよろしいですか？"} %>
           </div>
         </div>
@@ -24,12 +25,15 @@
       <div class="row">
         <div class="col-md-4 mb-3">
           <div class="card" style="max-width: 25rem;">
-            <%= image_tag card.card_design, class: "card-img-top", style: "object-fit: contain;height: 200px;" if card.card_design.attached? %>
+            <%= image_tag card.card_img, class: "card-img-top", style: "object-fit: contain;height: 200px;" if card.card_img.attached? %>
             <div class="card-body">
-              <h4 class="card-title">カードの見出し</h4>
-              <h6 class="card-subtitle">カードの副見出し</h6>
-              <p class="card-text">カードの内容分が入ります。</p>
-              <%= link_to "削除", card ,class: "btn btn-danger btn-outline btn-sm", method: :delete, data: { confirm: "削除してもよろしいですか？"} %>
+              <h4 class="card-title"><%=card.title%></h4>
+              <h6 class="card-subtitle"><%=card.auther_name%></h6>
+              <p class="card-text"></p>
+              <div class="text-right">
+                <%= link_to "詳細", card_path(card) ,class: "btn btn-primary btn-outline btn-sm"%>
+                <%= link_to "削除", card ,class: "btn btn-danger btn-outline btn-sm", method: :delete, data: { confirm: "本当に削除してもよろしいですか？(カードを所持しているユーザーが使用できなくなります)"} %>
+              </div>
             </div>
           </div>
         </div>

@@ -64,3 +64,7 @@ gem 'hashids'
 gem 'prawn'
 # 環境変数
 gem 'dotenv-rails'
+
+gem 'aws-sdk-s3'
+# QRコード生成
+gem 'rqrcode'

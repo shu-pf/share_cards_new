@@ -10,6 +10,7 @@ class CardsController < ApplicationController
 
   def create
     card = Card.new(card_params)
+    card[:user_id] = current_user.id
     card.save!
     license_group = LicenseGroup.new(license_group_params)
     license_group[:card_id] = card.id
@@ -33,7 +34,7 @@ class CardsController < ApplicationController
   private
 
   def card_params
-    params.require(:card).permit(:title, :auther_name, :content, :card_img_front, :qr_position_x, :qr_position_y, :card_img_back, :serial_position_x, :serial_position_y)
+    params.require(:card).permit(:title, :auther_name, :content, :card_img)
   end
 
   def license_group_params

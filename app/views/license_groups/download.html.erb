@@ -2,12 +2,11 @@
   <div class="container">
     <div class="text-center my-5">
       <h3>ダウンロードカードが作成されました！</h3>
-      <p>自動的にダウンロードされます。<br>ダウンロードが自動的に開始しない場合この<%=link_to "リンク", card_license_group_download2_path(@card, @license_group)%>を押してください。</p>
-      <p>今回使ったデザインを保存することが出来ます。<br>保存した場合次回作成時に使用することが出来ます。</p>
-      <a href="content.html" class="btn btn-outline-primary mb-3">今回作ったデザインを保存する</a>
-      <a href="content.html" class="btn btn-outline-primary mb-3">デザインを保存せず戻る</a>
-      <%= link_to "トップに戻る", cards_path, class: "btn btn-outline-primary mb-3"%>
-      <!-- <a href="content.html" class="btn btn-outline-primary mb-3">トップに戻る</a> -->
+      <p>下のリンクより、カードのデータを印刷することが出来ます。</p>
+      <%= link_to "表面はこちら", card_license_group_download_front_path(@card, @license_group), class: "btn btn-outline-primary mb-3", :target=>["_blank"] %>
+      <%= link_to "裏面はこちら", card_license_group_download_back_path(@card, @license_group), class: "btn btn-outline-primary mb-3", :target=>["_blank"] %>
+      <p>また、カードの追加発行などは下の一覧画面より行えます。</p>
+      <%= link_to "発行済みカード一覧へ", cards_path, class: "btn btn-outline-primary mb-3"%>
     </div>
   </div>
 </main>
