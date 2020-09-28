@@ -1,22 +1,22 @@
 <main>
   <div class="container">
     <h2 class="my-3">ダウンロードカードの登録</h2>
-    <a href="listen.html" class="btn btn-outline-primary mb-3">戻る</a>
+    <%= link_to "戻る", downloads_path, class: "btn btn-outline-primary mb-3"%>
     <%=form_with model: @serial_tmp, url: rgs_path, local: true do |f|%>
       <div class="form-group">
         <%= f.label :serial_code1, "シリアルコードを入力" %>
         <div class="row">
           <div class="col-3">
-            <%= f.text_field :serial_code1, class: "form-control", id: "serial_tmp_serial_code1"%>
+            <%= f.text_field :serial_code1, class: "form-control", id: "serial_tmp_serial_code1", maxlength: 4%>
           </div>
           <div class="col-3">
-            <%= f.text_field :serial_code2, class: "form-control", id: "serial_tmp_serial_code1"%>
+            <%= f.text_field :serial_code2, class: "form-control", id: "serial_tmp_serial_code1", maxlength: 4%>
           </div>
           <div class="col-3">
-            <%= f.text_field :serial_code3, class: "form-control", id: "serial_tmp_serial_code1"%>
+            <%= f.text_field :serial_code3, class: "form-control", id: "serial_tmp_serial_code1", maxlength: 4%>
           </div>
           <div class="col-3">
-            <%= f.text_field :serial_code4, class: "form-control", id: "serial_tmp_serial_code1"%>
+            <%= f.text_field :serial_code4, class: "form-control", id: "serial_tmp_serial_code1", maxlength: 4%>
           </div>
         </div>
       </div>

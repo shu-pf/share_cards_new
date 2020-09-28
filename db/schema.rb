@@ -37,11 +37,11 @@ ActiveRecord::Schema.define(version: 2020_09_27_171045) do
   end
 
   create_table "cards", force: :cascade do |t|
-    t.integer "user_id"
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "title"
-    t.string "auther_name"
+    t.string "title", null: false
+    t.string "auther_name", null: false
   end
 
   create_table "license_groups", force: :cascade do |t|
