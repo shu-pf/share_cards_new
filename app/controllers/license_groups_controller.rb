@@ -1,8 +1,47 @@
 class LicenseGroupsController < ApplicationController
+  def new
+    @license_group = LicenseGroup.new()
+    # 参照をするときは、常にカレントユーザーの権限があるか確認を！！！
+    @card = Card.find_by(id: params[:card_id], user_id: current_user.id)
+  end
+
+  def create
+    @license_group = LicenseGroup.new(license_group_params)
+    card = Card.find_by(id: params[:card_id], user_id: current_user.id)
+    @license_group[:card_id] = card.id
+    if @license_group.save
+    else
+      render :new
+      return
+    end
+
+    @license_group.number_of_licenses.times { |i|
+      license = License.new()
+      license[:license_group_id] = @license_group.id
+      license.save!
+
+      hashids = Hashids.new(ENV['SALT_FOR_SERIAL'], 16)
+      hash = hashids.encode(license.id)
+
+      license[:serial_code] = hash
+      license.save!
+    }
+
+    redirect_to card_license_group_download_url(card, @license_group), notice: "カードが作成されました"
+  end
+
+  def destroy
+    card = Card.find_by(id: params[:card_id], user_id: current_user.id)
+    license_group = LicenseGroup.find_by(card_id: card.id, id: params[:id])
+    license_group.destroy!
+    redirect_to card_url(card)
+  end
+
   def download
     @card = Card.find(params[:card_id])
     @license_group = LicenseGroup.find(params[:license_group_id])
   end
+  
   def download_front
     card = Card.find(params[:card_id])
     license_group = LicenseGroup.find(params[:license_group_id])
@@ -17,7 +56,10 @@ class LicenseGroupsController < ApplicationController
           x = 91.mm * j
           5.times { |i|
             y = 55.mm * (i + 1)
-            pdf.image file.path, :at => [x,y], :width => 91.mm, :height => 55.mm
+            pdf.bounding_box([x, y], width: 91.mm, height: 55.mm) do
+              pdf.image file.path, position: :center, vposition: :center, fit: [91.mm, 55.mm]
+              # pdf.stroke_bounds 枠線表示
+            end
             if i + j*5 + m*10 >= license_group.licenses.count-1
               flag = true
               break
@@ -80,5 +122,11 @@ class LicenseGroupsController < ApplicationController
     end
 
     send_data pdf.render, filename: "sample.pdf", type: "application/pdf", disposition: "inline"
+  end
+
+  private
+
+  def license_group_params
+    params.require(:license_group).permit(:number_of_licenses)
   end
 end

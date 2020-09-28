@@ -5,4 +5,5 @@ class Card < ApplicationRecord
 
   validates :title, presence: true
   validates :auther_name, presence: true
+  validates :content, presence: true
 end

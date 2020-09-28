@@ -1,0 +1,37 @@
+<main>
+  <div class="container">
+    <h2 class="my-3">カード情報詳細</h2>
+    <h3><%=@card.title%></h3>
+    <h4><%=@card.auther_name%></h4>
+    <div class="text-center">
+      <%= image_tag @card.card_img, style: "max-width: 100%; max-height: 379px;" if @card.card_img.attached? %>
+    </div>
+    <h3 class="my-3">カードの再印刷</h3>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">作成日時</th>
+          <th scope="col">カード枚数</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @card.license_groups.each do |license_group| %>
+        <tr>
+          <td><%=license_group.created_at%></td>
+          <td><%=license_group.number_of_licenses%></td>
+          <td>
+            <div class="text-right">
+              <%=link_to "再印刷", card_license_group_download_path(@card, license_group), class: "btn btn-primary btn-raised"%>
+              <%=link_to "削除", card_license_group_path(@card, license_group),method: :delete , class: "btn btn-danger", data: { confirm: "本当に削除してもよろしいですか？既にカードを配布している場合はそのカードは使用出来なくなります。"}%>
+            </div>
+          </td>
+        </tr>
+        <%end%>
+      </tbody>
+    </table>
+    <div class="text-right mb-3">
+      <%=link_to "カードを追加作成する" ,new_card_license_group_path(@card), class: "btn btn-primary btn-raised"%>
+    </div>
+  </div>
+</main>
