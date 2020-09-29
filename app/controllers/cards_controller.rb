@@ -6,6 +6,33 @@ class CardsController < ApplicationController
   def new_music
   end
 
+  def edit_title
+    @card = Card.find_by(id: params[:card_id], user_id: current_user.id)
+  end
+
+  def edit_auther_name
+    @card = Card.find_by(id: params[:card_id], user_id: current_user.id)
+  end
+
+  def edit_content
+    @card = Card.find_by(id: params[:card_id], user_id: current_user.id)
+  end
+
+  def edit_card_img
+    @card = Card.find_by(id: params[:card_id], user_id: current_user.id)
+  end
+
+  def update
+    card = Card.find_by(id: params[:id], user_id: current_user.id)
+    flag = card.update(card_params)
+    if flag
+    else
+      redirect_to card_url(card), alert: "更新に失敗しました"
+      return
+    end
+    redirect_to card_url(card), notice: "更新しました。"
+  end
+
   def edit
     @card = Card.find_by(id: params[:id], user_id: current_user.id)
   end
@@ -46,6 +73,12 @@ class CardsController < ApplicationController
   private
 
   def card_params
-    params.require(:card).permit(:title, :auther_name, :content, :card_img)
+    if params[:card]
+      params.require(:card).permit(:title, :auther_name, :content, :card_img)
+    else
+      # contentがからの場合の処理
+      # とりあえずなので要修正
+      params[:card] = {title: ""}
+    end
   end
 end

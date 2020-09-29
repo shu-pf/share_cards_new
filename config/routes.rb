@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   get 'cards/select', to: 'cards#select'
   get 'cards/new_music', to: 'cards#new_music'
   resources :cards do
+    get 'edit_title', to: 'cards#edit_title'
+    get 'edit_auther_name', to: 'cards#edit_auther_name'
+    get 'edit_content', to: 'cards#edit_content'
+    get 'edit_card_img', to: 'cards#edit_card_img'
     resources :license_groups do
       get 'download', to: 'license_groups#download'
       get 'download_front', to: 'license_groups#download_front'
