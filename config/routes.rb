@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   get 'rgs', to: 'rgs#index'
   get 'rgs/:serial_code', to: 'rgs#index'
   post 'rgs', to: 'rgs#rgs'
+  
+  get 'cards/select', to: 'cards#select'
+  get 'cards/new_music', to: 'cards#new_music'
   resources :cards do
     resources :license_groups do
       get 'download', to: 'license_groups#download'

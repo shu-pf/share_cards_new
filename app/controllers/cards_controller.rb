@@ -3,6 +3,9 @@ class CardsController < ApplicationController
     @cards = current_user.cards
   end
 
+  def new_music
+  end
+
   def show
     # 他の人がアップリしているカードを見れない様にする
     @card = Card.find_by(id: params[:id], user_id: current_user.id)
@@ -13,6 +16,9 @@ class CardsController < ApplicationController
     # Todo:関連する物の削除
     card.destroy!
     redirect_to cards_url
+  end
+
+  def select
   end
 
   def new

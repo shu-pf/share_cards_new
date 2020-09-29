@@ -5,8 +5,8 @@
       <% @cards.each do |card| %>
       <div class="row mb-2 border-top pt-2">
         <div class="col-4">
-          <div class="pr-1">
-            <%= image_tag card.card_img, class: "img-thumbnail", style: "object-fit: contain;" if card.card_img.attached? %>
+          <div class="pr-1 text-center">
+            <%= image_tag card.card_img.variant(resize:'140x100').processed, class: "img-thumbnail", style: "object-fit: contain;" if card.card_img.attached? %>
           </div>
         </div>
         <div class="col-8">
@@ -25,7 +25,7 @@
       <% @cards.each do |card| %>
         <div class="col-md-4 mb-3">
           <div class="card" style="max-width: 25rem;">
-            <%= image_tag card.card_img, class: "card-img-top", style: "object-fit: contain;height: 200px;" if card.card_img.attached? %>
+            <%= image_tag card.card_img.variant(resize:'350x200').processed, class: "card-img-top", style: "object-fit: contain;height: 200px;" if card.card_img.attached? %>
             <div class="card-body">
               <h4 class="card-title"><%=card.title%></h4>
               <h6 class="card-subtitle"><%=card.auther_name%></h6>
@@ -46,7 +46,7 @@
     </div>
     <% end %>
     <div class="text-right mb-3">
-      <%=link_to "新しいカードを作成する", new_card_path, class: "btn btn-primary btn-raised"%>
+      <%=link_to "新しいカードを作成する", cards_select_path, class: "btn btn-primary btn-raised"%>
     </div>
   </div>
 </main>

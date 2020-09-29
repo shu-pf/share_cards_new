@@ -68,3 +68,8 @@ gem 'dotenv-rails'
 gem 'aws-sdk-s3'
 # QRコード生成
 gem 'rqrcode'
+
+# 画像縮小
+gem 'mini_magick', '~> 4.8'
+
+gem 'material_icons'
