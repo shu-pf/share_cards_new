@@ -6,8 +6,12 @@ class CardsController < ApplicationController
   def new_music
   end
 
+  def edit
+    @card = Card.find_by(id: params[:id], user_id: current_user.id)
+  end
+
   def show
-    # 他の人がアップリしているカードを見れない様にする
+    # 他の人がアップしているカードを見れない様にする
     @card = Card.find_by(id: params[:id], user_id: current_user.id)
   end
 
