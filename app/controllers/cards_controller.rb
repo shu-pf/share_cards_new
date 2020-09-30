@@ -14,10 +14,6 @@ class CardsController < ApplicationController
     @card = Card.find_by(id: params[:card_id], user_id: current_user.id)
   end
 
-  def edit_content
-    @card = Card.find_by(id: params[:card_id], user_id: current_user.id)
-  end
-
   def edit_card_img
     @card = Card.find_by(id: params[:card_id], user_id: current_user.id)
   end
@@ -74,9 +70,9 @@ class CardsController < ApplicationController
 
   def card_params
     if params[:card]
-      params.require(:card).permit(:title, :auther_name, :content, :card_img)
+      params.require(:card).permit(:title, :auther_name, :card_img)
     else
-      # contentがからの場合の処理
+      # ActiveStrageがからの場合の処理
       # とりあえずなので要修正
       params[:card] = {title: ""}
     end

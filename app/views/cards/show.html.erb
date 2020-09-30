@@ -37,15 +37,6 @@
               </div>
             </td>
           </tr>
-          <tr>
-            <td>コンテンツ名</td>
-            <td><%=@card.content.filename.to_s%></td>
-            <td>
-              <div class="text-right">
-                <%=link_to "編集", card_edit_content_path(@card), class: "btn btn-success btn-outline"%>
-              </div>
-            </td>
-          </tr>
         </tbody>
       </table>
     </section>
