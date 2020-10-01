@@ -41,6 +41,26 @@
       </table>
     </section>
     <section>
+      <h4>コンテンツ</h4>
+      <table class="table table-hover">
+        <tbody>
+        <%@card.contents.each do |content|%>
+          <tr>
+            <td><%=content.content.filename.to_s%></td>
+            <td>
+              <div class="text-right">
+                <%=link_to "削除", card_content_path(@card, content), method: :delete, class: "btn btn-danger"%>
+              </div>
+            </td>
+          </tr>
+        <%end%>
+        </tbody>
+      </table>
+      <div class="text-right mb-3">
+        <%=link_to "コンテンツを追加登録する" , new_card_content_path(@card), class: "btn btn-primary btn-outline"%>
+      </div>
+    </section>
+    <section>
       <h4>カードの再印刷と新規作成</h4>
       <table class="table table-hover">
         <thead>
@@ -65,9 +85,9 @@
           <%end%>
         </tbody>
       </table>
+      <div class="text-right mb-3">
+        <%=link_to "カードを追加作成する" ,new_card_license_group_path(@card), class: "btn btn-primary btn-outline"%>
+      </div>
     </section>
-    <div class="text-right mb-3">
-      <%=link_to "カードを追加作成する" ,new_card_license_group_path(@card), class: "btn btn-primary btn-outline"%>
-    </div>
   </div>
 </main>

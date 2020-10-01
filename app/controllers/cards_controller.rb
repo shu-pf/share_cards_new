@@ -34,8 +34,7 @@ class CardsController < ApplicationController
   end
 
   def show
-    # 他の人がアップしているカードを見れない様にする
-    @card = Card.find_by(id: params[:id], user_id: current_user.id)
+    @card = current_user.cards.find(params[:id])
   end
 
   def destroy
@@ -57,8 +56,7 @@ class CardsController < ApplicationController
     @card = Card.new(card_params)
     @card[:user_id] = current_user.id
 
-    if @card.save
-    else
+    if @card.save == false
       render :new
       return
     end
