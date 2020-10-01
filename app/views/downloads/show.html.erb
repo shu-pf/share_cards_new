@@ -13,13 +13,18 @@
         <%@card.contents.each do |content|%>
           <tr>
             <td><%=content.content.filename.to_s%></td>
-            <td><%=link_to 'ダウンロード', download_download_content_path(@license, content)%></td>
+            <td>
+              <div class="text-right">
+                <%=content.content.content_type%>
+                <%=link_to 'ダウンロード', download_download_content_path(@license, content), :target=>["_blank"], class: "btn btn-primary btn-outline"%>
+              </div>
+            </td>
           </tr>
         <%end%>
         </tbody>
       </table>
       <div class="text-right mb-3">
-        <%=link_to "一括ダウンロード" , download_download_contents_path(@license), class: "btn btn-primary btn-outline"%>
+        <%=link_to "一括ダウンロード" , download_download_contents_path(@license, format: :zip), class: "btn btn-primary btn-outline"%>
       </div>
     </section>
   </div>
