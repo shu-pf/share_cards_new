@@ -75,3 +75,5 @@ gem 'mini_magick', '~> 4.8'
 gem 'material_icons'
 
 gem 'zipline'
+
+gem 'rails_12factor', group: :production
