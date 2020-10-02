@@ -9,7 +9,7 @@ class DownloadContentsController < ApplicationController
         card = license.license_group.card
         contents = card.contents
         files = contents.map{ |content| [content.content, content.content.filename.to_s] }
-        zipline(files, "#{card.title}contents.zip")
+        zipline(files, "#{card.title}.zip")
       }
     end
   end

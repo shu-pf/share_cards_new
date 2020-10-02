@@ -14,12 +14,15 @@ class RgsController < ApplicationController
   def rgs
     serial_codes = SerialTmp.new(serial_params)
     serial_code = serial_codes.serial_code1 + serial_codes.serial_code2 + serial_codes.serial_code3 + serial_codes.serial_code4
-    flag = License.where(serial_code: serial_code).exists?
-    if flag
-      # ライセンスの更新処理
-      license = License.find_by(serial_code: serial_code)
-      license.update(user_id: current_user.id)
-      redirect_to downloads_url, notice: "「#{license.license_group.card.title}」を登録しました。ダウンロードボタンからダウンロード出来ます。"
+    if License.where(serial_code: serial_code).exists?
+      license = License.where(serial_code: serial_code)
+      if license.user_id == ""
+        # ライセンスの更新処理
+        license = License.find_by(serial_code: serial_code)
+        license.update(user_id: current_user.id)
+        redirect_to downloads_url, notice: "「#{license.license_group.card.title}」を登録しました。ダウンロードボタンからダウンロード出来ます。"
+      else
+        redirect_to rgs_url, alert: "無効なシリアルナンバーです"
     elsif 
       redirect_to rgs_url, alert: "無効なシリアルナンバーです"
     end

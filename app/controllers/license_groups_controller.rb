@@ -73,6 +73,7 @@ class LicenseGroupsController < ApplicationController
       end
     end
 
+    # disposition: "inline" ブラウザで表示
     send_data pdf.render, filename: "sample.pdf", type: "application/pdf", disposition: "inline"
   end
 
@@ -121,6 +122,7 @@ class LicenseGroupsController < ApplicationController
       m+=1
     end
 
+    # disposition: "inline" ブラウザで表示
     send_data pdf.render, filename: "sample.pdf", type: "application/pdf", disposition: "inline"
   end
 
