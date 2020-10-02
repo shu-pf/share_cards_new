@@ -106,7 +106,8 @@ class LicenseGroupsController < ApplicationController
           pdf.draw_text serial_code_alt, :at => [x + (7.2).mm,y - (28.7).mm]
           # QRの生成
           url = root_url + "rgs/" + serial_code
-          qrcode = RQRCode::QRCode.new(url, size: 3, level: :m)
+          # QRのsize指定が必要かどうか、読み取れるかどうかは要確認
+          qrcode = RQRCode::QRCode.new(url, level: :m)
           png = qrcode.as_png(size: 75,border_modules: 0)
           image_data=StringIO.new(png.to_s)
           pdf.image image_data, :at => [x + (62).mm, y - (14).mm]
