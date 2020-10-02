@@ -18,6 +18,7 @@ https://www.dropbox.com/s/ndxjzvlaxxof9tb/IMG_1477.jpg?dl=0
 
 ## 使用方法
 ・アーティスト側
+
 まず、エーワン 名刺 マルチカード 両面クリアエッジを購入します。
 https://www.amazon.co.jp/dp/B000WM8NQE/ref=cm_sw_r_tw_dp_x_7V1DFbQWKV266
 
@@ -46,6 +47,7 @@ https://www.amazon.co.jp/dp/B000WM8NQE/ref=cm_sw_r_tw_dp_x_7V1DFbQWKV266
 カードの販売
 
 ・顧客側
+
 カードの受け取り
 
 ↓
