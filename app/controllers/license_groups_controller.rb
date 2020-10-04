@@ -103,8 +103,7 @@ class LicenseGroupsController < ApplicationController
               serial_code_alt += s
             end
           end
-          # pdf.draw_text serial_code_alt, :at => [x + (7.2).mm,y - (28.7).mm]
-          pdf.draw_text "XXXX-XXXX-XXXX-XXXX", :at => [x + (7.2).mm,y - (28.7).mm]
+          pdf.draw_text serial_code_alt, :at => [x + (7.2).mm,y - (28.7).mm]
           # QRの生成
           url = root_url + "rgs/" + serial_code
           # QRのsize指定が必要かどうか、読み取れるかどうかは要確認
