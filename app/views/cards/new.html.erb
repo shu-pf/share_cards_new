@@ -22,7 +22,11 @@
       </div>
       <h3>表面のデザイン設定</h3>
       <div class="form-group">
-        <%= f.label "カードの表の背景(1254px*758px)" %>
+        <%= f.label "デザインの選択" %>
+        <%= f.select :design_type, {'オリジナルのデザイン' => 1, 'プリセット1' => 2},{}, class: "custom-select", id: "design_type"%>
+      </div>
+      <div class="form-group">
+        <%= f.label "カードの表の背景 (1254px*758px推奨)" %>
         <%= f.file_field :card_img, class: "form-control-file", id: "card_img"%>
       </div>
       <div class="text-center">

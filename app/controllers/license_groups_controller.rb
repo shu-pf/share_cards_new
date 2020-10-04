@@ -58,7 +58,7 @@ class LicenseGroupsController < ApplicationController
             y = 55.mm * (i + 1)
             pdf.bounding_box([x, y], width: 91.mm, height: 55.mm) do
               pdf.image file.path, position: :center, vposition: :center, fit: [91.mm, 55.mm]
-              # pdf.stroke_bounds 枠線表示
+              # pdf.stroke_bounds
             end
             if i + j*5 + m*10 >= license_group.licenses.count-1
               flag = true
@@ -103,7 +103,8 @@ class LicenseGroupsController < ApplicationController
               serial_code_alt += s
             end
           end
-          pdf.draw_text serial_code_alt, :at => [x + (7.2).mm,y - (28.7).mm]
+          # pdf.draw_text serial_code_alt, :at => [x + (7.2).mm,y - (28.7).mm]
+          pdf.draw_text "XXXX-XXXX-XXXX-XXXX", :at => [x + (7.2).mm,y - (28.7).mm]
           # QRの生成
           url = root_url + "rgs/" + serial_code
           # QRのsize指定が必要かどうか、読み取れるかどうかは要確認

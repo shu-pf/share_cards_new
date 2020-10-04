@@ -1,24 +1,59 @@
-# README
+# ShareCards
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+自宅で簡単にダウンロードカード作成！
 
-Things you may want to cover:
+## URL
+https://share-cards.herokuapp.com/
 
-* Ruby version
+↑つながらなかった場合
+https://share-cards.com/
+https://www.share-cards.com/
 
-* System dependencies
+## 概要
+音楽やイラストなどのダウンロードできる機能を有したカード(ダウンロードカード)を、作成できると言うサービスになっております。
 
-* Configuration
+## 商品活用例
+WEBサービスで実際に作ったダウンロードカードの見本になります。
+https://www.dropbox.com/s/ndxjzvlaxxof9tb/IMG_1477.jpg?dl=0
 
-* Database creation
+## 使用方法
+・アーティスト側
 
-* Database initialization
+まず、エーワン 名刺 マルチカード 両面クリアエッジを購入します。
+https://www.amazon.co.jp/dp/B000WM8NQE/ref=cm_sw_r_tw_dp_x_7V1DFbQWKV266
 
-* How to run the test suite
+↓
 
-* Services (job queues, cache servers, search engines, etc.)
+カードの登録(カードデザインのアップロード)
 
-* Deployment instructions
+↓
 
-* ...
+カード発行部数の選択
+
+↓
+
+カード発行部数分のシリアルコードの発行
+
+↓
+
+カードレイアウトのダウンロード
+
+↓
+
+「マルチカード　両面クリアエッジタイプ　品番51861E」などの商品に印刷
+
+↓
+
+カードの販売
+
+・顧客側
+
+カードの受け取り
+
+↓
+
+カードのシリアルコードの入力
+
+↓
+
+ダウンロード
