@@ -55,6 +55,11 @@ class CardsController < ApplicationController
   def create
     @card = Card.new(card_params)
     @card[:user_id] = current_user.id
+    case @card.design_type
+    when 2 then
+      downloaded_image = open(root_url + 'samplecard1.png')
+      @card.card_img.attach(io: downloaded_image  , filename: "samplecard1.png")
+    end
 
     if @card.save == false
       render :new
@@ -68,7 +73,7 @@ class CardsController < ApplicationController
 
   def card_params
     if params[:card]
-      params.require(:card).permit(:title, :auther_name, :card_img)
+      params.require(:card).permit(:title, :auther_name, :card_img, :design_type)
     else
       # ActiveStrageがからの場合の処理
       # とりあえずなので要修正
