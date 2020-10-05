@@ -20,5 +20,9 @@ Rails.application.routes.draw do
   end
   devise_for :users
   root to: "home#index"
+  get 'topic', to: 'home#topic'
+  get 'use', to: 'home#use'
+  get 'question', to: 'home#question'
+  get 'contact', to: 'home#contact'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

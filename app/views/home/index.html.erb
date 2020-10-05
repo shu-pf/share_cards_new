@@ -1,16 +1,112 @@
+<%#style="padding-top: 65px;"%>
 <main>
-  <div class="jumbotron jumbotron-fluid">
+  <div class="jumbotron jumbotron-fluid d-none d-md-block" style="background-image:url(<%= asset_path 'top-jumbotron.png' %>);background-size:cover; height: 60vw;">
+    <div class="container" style="position: relative; top: 50%; transform: translateY(-50%);">
+      <h1 style="line-height: 1.5;">お家でかんたん<br>ダウンロードカード制作</h1>
+      <div>
+        <%=link_to "ダウンロードする(カードが必要です)",downloads_path,class: "btn btn-raised btn-primary", style: "font-weight: bold;"%>
+      </div>
+      <div>
+        <%=link_to "カードを作る",cards_path,class: "btn btn-outline btn-primary", style: "background-color: white; font-weight: bold;"%>
+      </div>
+    </div>
+  </div>
+  <div class="d-md-none" style="padding-top: 100px;">
     <div class="container">
-      <h1 class="display-3">ShareCards</h1>
-      <p class="lead">ダウンロードカードを手軽に簡単生成</p>
-      <p>「Share Card」はコンテンツをダウンロードできる機能を持たせたカードを自分で作ることが出来るサービスです。<br>登録できるコンテツは、音楽・画像・ゲームなどなんでも！<br>本や同人誌に気軽にコンテツを同封してみませんか？</p>
-      <%=link_to "カードを作る",cards_path,class: "btn btn-raised btn-primary"%>
-      <%=link_to "ダウンロードする(カードが必要です)",downloads_path,class: "btn btn-raised btn-primary"%>
+      <h1 style="font-size: 40px;">お家でかんたん<br>ダウンロードカード制作</h1>
+      <div>
+        <%=link_to "ダウンロードする(カードが必要です)",downloads_path,class: "btn btn-raised btn-primary", style: "font-weight: bold;"%>
+      </div>
+      <div>
+        <%=link_to "カードを作る",cards_path,class: "btn btn-outline btn-primary", style: "background-color: white; font-weight: bold;"%>
+      </div>
     </div>
   </div>
   <div class="container">
-    <div class="text-center">
-      <h2>自宅で簡単にダウンロードカード生成！Sendgrid</h2>
+    <section class="mb-5">
+      <div class="text-center">
+        <h2 class="my-3">コンテンツを届ける新しいカタチ</h2>
+        <%= image_tag  "top-img1.png" ,style: "max-width: 100%"%>
+      </div>
+      <div class="text-center">
+        <p class="d-inline-block" style="text-align: left;">近年ではスマホで音楽を聞くことが主流となり、CDプレイヤーをもたない層が増加してます。<br>
+        しかし、デジタル配信には手間がかかります。<br>
+        <br>
+        もっと手軽に、コンテンツを顧客に渡せられる方法はないでしょうか？<br>
+        そんな問題を解決するのが「Share Cards」です。</p>
+      </div>
+    </section>
+    <section class="mb-5">
+      <div class="text-center">
+        <h2 class="my-3">使い方</h2>
+        <p class="mb-2">まずは市販の名刺カードを買います。</p>
+        <div class="row mb-2">
+          <div class="col-6">
+            <%= image_tag  "a-one1.png" %>
+          </div>
+          <div class="col-6">
+            <%= image_tag  "a-one2.png" %>
+          </div>
+        </div>
+        <p class="d-inline-block" style="text-align: left;">
+        対応用紙<br>
+        A-one マルチカード 品番51861E<br>
+        A-one ラベルシール キレイにはがせる A4 44面 10シート 品番31268
+        <div class="row mb-2">
+          <div class="col-6">
+            <%= image_tag  "pc.png", style: "max-width: 100%;"%>
+          </div>
+          <div class="col-6 d-flex" style="align-items: center;">
+            <p style="text-align: left;">
+            その後WEBページを使用して、<br>
+            レイアウトを作ります。</p>
+          </div>
+        </div>
+        <p>※詳しい使い方は使い方ページを御覧ください</p>
+      </div>
+    </section>
+    <section class="mb-5">
+      <div class="text-center">
+        <h2 class="my-3">3つの特徴</h2>
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <h4>さまざまなコンテンツ</h4>
+            <%= image_tag  "top-img2.png" %>
+            <p style="text-align: left;">さまざまなコンテンツを渡せます。<br>
+            音楽・イラスト・写真・ゲームなど<br>
+          </div>
+          <div class="col-md-4 mb-3">
+            <h4>限られた人数に共有できる</h4>
+            <%= image_tag  "card_back.png" %>
+            <p style="text-align: left;">
+            カード一枚一枚に対して<br>
+            Serial Codeを発行しています。<br>
+            これにより、渡したい人だけにコンテンツを<br>
+            渡すことが出来ます。
+            </p>
+          </div>
+          <div class="col-md-4 mb-3">
+            <h4>デザインを複数選べる</h4>
+            <p style="text-align: left;">
+            数種類の用意されたデザインの他<br>
+            あなた独自のデザインを<br>
+            選択することも出来ます。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="jumbotron jumbotron-fluid" style="background-color: #2196f3;">
+    <div style="background-color: white; width: 300px; text-align: center; margin: 0 auto; padding: 20px 30px;">
+      <h3>Shareを始めよう</h3>
+      <p>
+      今すぐカードを作って<br>
+      コンテンツを送りましょう。
+      </p>
+      <div>
+        <%=link_to "カードを作る",cards_path,class: "btn btn-raised btn-primary", style: "font-weight: bold;"%>
+      </div>
     </div>
   </div>
 </main>
