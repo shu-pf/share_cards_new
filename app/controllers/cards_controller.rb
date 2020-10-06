@@ -39,7 +39,6 @@ class CardsController < ApplicationController
 
   def destroy
     card = Card.find_by(id: params[:id], user_id: current_user.id)
-    # Todo:関連する物の削除
     card.destroy!
     redirect_to cards_url
   end

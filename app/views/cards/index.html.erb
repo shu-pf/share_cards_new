@@ -32,7 +32,7 @@
               <p class="card-text"></p>
               <div class="text-right">
                 <%= link_to "詳細", card_path(card) ,class: "btn btn-primary btn-outline btn-sm"%>
-                <%= link_to "削除", card ,class: "btn btn-danger btn-outline btn-sm", method: :delete, data: { confirm: "本当に削除してもよろしいですか？(カードを所持しているユーザーが使用できなくなります)"} %>
+                <%= link_to "削除", card ,class: "btn btn-danger btn-outline btn-sm", method: :delete, data: { confirm: "本当に削除してもよろしいですか？(カードのコンテンツと、カードの全てのシリアルコードが削除されます)"} %>
               </div>
             </div>
           </div>
