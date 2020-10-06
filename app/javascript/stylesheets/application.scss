@@ -13,3 +13,8 @@ h1,h2,h3 {
   font-weight: bolder;
   letter-spacing: .08em;
 }
+
+.btn {
+  // outlineがなぜか消えていたため
+  margin: 1px;
+}

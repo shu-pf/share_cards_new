@@ -42,11 +42,12 @@
     </div>
     <% if @cards.empty? %>
     <div class="text-center my-5">
+      <h3><span class="material-icons" style="font-size: 4rem;">help</span></h3>
       <h4>まだカードを作成していません。</h4>
     </div>
     <% end %>
     <div class="text-right mb-3">
-      <%=link_to "新しいカードを作成する", new_card_path, class: "btn btn-primary btn-raised"%>
+      <%=link_to "カードテンプレートの作成", new_card_path, class: "btn btn-primary btn-raised"%>
     </div>
   </div>
 </main>

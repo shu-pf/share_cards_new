@@ -65,7 +65,7 @@ class CardsController < ApplicationController
       return
     end
 
-    redirect_to new_card_license_group_url(@card), notice: "カードが登録されました"
+    redirect_to card_url(@card), notice: "作成されました。続いてコンテンツを登録します。"
   end
 
   private
