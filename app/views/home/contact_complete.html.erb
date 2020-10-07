@@ -1,0 +1,17 @@
+<main>
+  <div class="jumbotron jumbotron-fluid d-none d-md-block" style="background-image:url(<%= asset_path 'side-jumbotron.png' %>); height: 550px; background-position: center;">
+    <div class="container" style="position: relative; top: 50%; transform: translateY(-50%);">
+      <h1>お問い合わせ</h1>
+    </div>
+  </div>
+  <div class="d-md-none my-5">
+    <div class="container">
+      <h1 style="font-size: 40px;">お問い合わせ</h1>
+    </div>
+  </div>
+  <div class="container">
+    <h2 class="text-center">送信完了</h2>
+    <p>お問い合わせありがとうございます。<br>メーセージは送信されました。</p>
+    <%= link_to  "TOPに戻る", root_path,class: 'btn btn-primary btn-outline' %>
+  </div>
+</main>

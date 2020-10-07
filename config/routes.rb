@@ -28,5 +28,8 @@ Rails.application.routes.draw do
   get 'use', to: 'home#use'
   get 'question', to: 'home#question'
   get 'contact', to: 'home#contact'
+  post :contact, to: 'home#contact_confirm'
+  post 'contact_create', to: 'home#contact_create'
+  get 'contact_complete', to: 'home#contact_complete'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
