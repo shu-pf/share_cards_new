@@ -1,0 +1,19 @@
+<main>
+  <div class="container">
+    <h1 class="my-5">メールの一斉送信</h1>
+    <%= link_to  "戻る", admin_path, class: "btn btn-primary btn-outline" %>
+    <%= form_with url: admin_send_mail_path do |f| %>
+      <div class="form-group">
+        <%= f.label :subject %>
+        <%= f.text_field :subject, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :content %>
+        <%= f.text_area :content, class: "form-control" %>
+      </div>
+      <div class="text-right">
+        <%= f.submit "送信する",class: 'btn btn-primary btn-raised'%>
+      </div>
+    <% end %>
+  </div>
+</main>

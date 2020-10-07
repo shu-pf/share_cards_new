@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'admin/', to: 'admin#index'
+  get 'admin/new_mail', to: 'admin#new_mail'
+  post 'admin/send_mail', to: 'admin#send_mail'
+
   get 'rgs', to: 'rgs#index'
   get 'rgs/:serial_code', to: 'rgs#index'
   post 'rgs', to: 'rgs#rgs'
