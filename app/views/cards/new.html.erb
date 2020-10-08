@@ -11,6 +11,7 @@
 <main>
   <div class="container">
     <h2 class="my-3">新しいカードテンプレートの作成</h2>
+    <%= link_to  "戻る", cards_path, class: "btn btn-primary btn-outline mb-3" %>
     <%=form_with model: @card, local: true do |f|%>
       <div class="form-group">
         <%= f.label "タイトル" %>
@@ -20,7 +21,14 @@
         <%= f.label "作成者" %>
         <%= f.text_field :auther_name, class: "form-control", id: "auther_name"%>
       </div>
-      <h3>表面のデザイン設定</h3>
+      <h3>デザイン設定</h3>
+      <p>カードのデザインを決められます。</p>
+      <!--
+      <p>ここでの設定は、カードの表面とカードを読み取った際に使われます。</p>
+      <p>・オリジナルのデザインの場合<br>デザインの選択から「オリジナルのデザイン」を選びます。<br>次に、デザインのアップロードよりアップロードします。</p>
+      <p>・元々あるデザインから選ぶ場合<br>デザインの選択から、気にいるデザインを選びます。</p>
+      -->
+      <p>※用紙設定でラベルの商品を選んだ場合、この設定はラベル印刷面には現れません。</p>
       <div class="form-group">
         <%= f.label "用紙選択" %>
         <%= f.select :format, {'A-one 品番51861E' => "51861E", 'A-one 品番31268' => "31268"},{}, class: "custom-select", id: "format"%>
@@ -30,15 +38,12 @@
         <%= f.select :design_type, {'オリジナルのデザイン' => 1, 'プリセット1' => 2},{}, class: "custom-select", id: "design_type"%>
       </div>
       <div class="form-group">
-        <%= f.label "カードの表の背景" %>
+        <%= f.label "デザインのアップロード" %>
         <%= f.file_field :card_img, class: "form-control-file", id: "card_img"%>
       </div>
       <h4>デザインプレビュー</h4>
       <div class="text-center">
         <%= image_tag 'sample.png', id: "background-preview", style: "max-width: 100%; max-height: 379px;" %>
-      </div>
-      <div class="d-none" id='message'>
-        <h3>ラベル商品では表面のデザイン設定は出来ません。</h3>
       </div>
       <div class="text-right">
         <%= f.submit nil,class: 'btn btn-primary btn-raised'%>
