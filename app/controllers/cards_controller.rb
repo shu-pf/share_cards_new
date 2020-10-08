@@ -72,7 +72,7 @@ class CardsController < ApplicationController
 
   def card_params
     if params[:card]
-      params.require(:card).permit(:title, :auther_name, :card_img, :design_type)
+      params.require(:card).permit(:title, :auther_name, :card_img, :design_type, :format)
     else
       # ActiveStrageがからの場合の処理
       # とりあえずなので要修正

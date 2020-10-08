@@ -4,5 +4,6 @@ class Card < ApplicationRecord
   has_many :contents, dependent: :destroy
 
   validates :title, presence: true
+  validates :format, presence: true
   validates :auther_name, presence: true
 end

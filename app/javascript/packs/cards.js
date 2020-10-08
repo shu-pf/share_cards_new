@@ -39,3 +39,20 @@ design_type.onchange = function (){
       console.log(design_type.selectedIndex);
   }
 };
+
+var format = document.getElementById("format");
+format.onchange = function (){
+  var background_preview = document.getElementById("background-preview");
+  var message = document.getElementById("message");
+  console.log(format.selectedIndex);
+  switch (format.selectedIndex) {
+    case 0:
+      background_preview.className = '';
+      message.className = 'd-none';
+      break;
+    case 1:
+      background_preview.className = 'd-none';
+      message.className = 'text-center my-5';
+      break;
+  }
+};

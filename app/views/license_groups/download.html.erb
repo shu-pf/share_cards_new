@@ -3,8 +3,13 @@
     <div class="text-center my-5">
       <h3>ダウンロードカードが作成されました！</h3>
       <p>下のリンクより、カードのデータを印刷することが出来ます。</p>
-      <%= link_to "表面はこちら", card_license_group_download_front_path(@card, @license_group), class: "btn btn-outline-primary mb-3", :target=>["_blank"] %>
-      <%= link_to "裏面はこちら", card_license_group_download_back_path(@card, @license_group), class: "btn btn-outline-primary mb-3", :target=>["_blank"] %>
+      <%if @card.format == '31268'%>
+        <%= link_to "印刷データはこちら", card_license_group_download_back_path(@card, @license_group), class: "btn btn-outline-primary mb-3", :target=>["_blank"] %>
+      <%end%>
+      <%if @card.format == '51861E'%>
+        <%= link_to "表面はこちら", card_license_group_download_front_path(@card, @license_group), class: "btn btn-outline-primary mb-3", :target=>["_blank"] %>
+        <%= link_to "裏面はこちら", card_license_group_download_back_path(@card, @license_group), class: "btn btn-outline-primary mb-3", :target=>["_blank"] %>
+      <%end%>
       <p>また、カードの追加発行などは下の一覧画面より行えます。</p>
       <%= link_to "発行済みカード一覧へ", cards_path, class: "btn btn-outline-primary mb-3"%>
     </div>
