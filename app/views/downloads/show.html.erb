@@ -1,11 +1,42 @@
 <main>
-  <div class="container">
+  <div class="container mb-5">
     <h2 class="my-3"><%=@card.title%></h2>
     <h5><%=@card.auther_name%></h5>
     <%=link_to "一覧画面に戻る", downloads_path, class: "btn btn-primary btn-outline"%>
     <div class="text-center mb-3">
       <%= image_tag @card.card_img, style: "max-width: 100%; max-height: 379px;" if @card.card_img.attached? %>
     </div>
+    <%if @card.musics.any?%>
+    <section>
+      <h4>音楽・音声</h4>
+      <table class="table table-hover" style="table-layout: fixed;">
+        <tbody>
+        <%@card.musics.each do |music|%>
+          <tr>
+            <td><%#=music.music.filename.to_s%>
+              <div>
+                <span style="font-weight: bold;"><%=music.title%></span><br>
+              </div>
+              <div>
+                <span style="font-size: 14px;"><%=music.artist_name%></span>
+              </div>
+            </td>
+            <td>
+              <div class="text-right">
+                <%#=music.music.content_type%>
+                <%=link_to '再生', download_download_music_path(@license, music), remote: true, class: "btn btn-primary btn-outline"%>
+              </div>
+            </td>
+          </tr>
+        <%end%>
+        </tbody>
+      </table>
+      <div class="text-right mb-3">
+        <%=link_to "一括ダウンロード" , download_download_musics_path(@license, format: :zip), class: "btn btn-primary btn-outline"%>
+      </div>
+    </section>
+    <%end%>
+    <%if @card.contents.any?%>
     <section>
       <h4>コンテンツ</h4>
       <table class="table table-hover">
@@ -27,5 +58,16 @@
         <%=link_to "一括ダウンロード" , download_download_contents_path(@license, format: :zip), class: "btn btn-primary btn-outline"%>
       </div>
     </section>
+    <%end%>
   </div>
 </main>
+<div class="d-none" id="player_container">
+  <div class="scrollbar" id="scrollbar"></div>
+  <div class="scrollbar-glay" id="scrollbar_glay"></div>
+  <audio src="#" id="audio"></audio>
+  <div class="player-title" id="player_title"></div>
+  <div class="player-artist" id="player_artist"></div>
+  <button class="now" id="play"><span class="material-icons">play_arrow</span></button>
+  <button class="d-none" id="pause"><span class="material-icons">pause</span></button>
+</div>
+<%= javascript_pack_tag 'player', 'data-turbolinks-track': 'reload' %>

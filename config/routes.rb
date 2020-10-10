@@ -13,6 +13,11 @@ Rails.application.routes.draw do
     get 'edit_content', to: 'cards#edit_content'
     get 'edit_card_img', to: 'cards#edit_card_img'
     resources :contents
+    resources :musics do
+      post 'moveup', to: 'musics#moveup'
+      post 'movedown', to: 'musics#movedown'
+      post 'music_destroy', to: 'musics#music_destroy'
+    end
     resources :license_groups do
       get 'download', to: 'license_groups#download'
       get 'download_front', to: 'license_groups#download_front'
@@ -20,6 +25,7 @@ Rails.application.routes.draw do
     end
   end
   resources :downloads do
+    resources :download_musics
     resources :download_contents
   end
   devise_for :users

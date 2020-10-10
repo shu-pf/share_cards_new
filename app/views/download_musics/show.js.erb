@@ -1,0 +1,9 @@
+player_container.className = "player-container";
+
+audio.src = "<%= url_for(@file) %>"
+audio.currentTime = 0;
+player_title.innerHTML = "<%= @music.title %>"
+player_artist.innerHTML = "<%= @music.artist_name %>"
+audio.play();
+play.className = "d-none";
+pause.className = "now";

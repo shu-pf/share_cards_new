@@ -77,3 +77,7 @@ gem 'material_icons'
 gem 'zipline'
 
 gem 'rails_12factor', group: :production
+
+gem 'streamio-ffmpeg'
+
+gem 'activestorage-validator'

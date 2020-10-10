@@ -1,0 +1,41 @@
+<main>
+  <div class="container">
+    <h2 class="my-3"><%=@card.title%></h2>
+    <h4>楽曲一覧</h4>
+    <%= link_to  "戻る", card_path(@card), class: "btn btn-primary btn-outline" %>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">No.</th>
+          <th scope="col">タイトル</th>
+          <th scope="col">アーティスト名</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%@musics.each do |music|%>
+        <tr>
+          <th><%=music.track_number%></th>
+          <td><%=music.title%></td>
+          <td><%=music.artist_name%></td>
+          <td>
+            <div class="text-right">
+              <%= link_to'↑', card_music_moveup_path(@card, music), method: :post, class: "btn btn-primary btn-outline" %>
+              <%= link_to'↓', card_music_movedown_path(@card, music), method: :post, class: "btn btn-primary btn-outline" %>
+              <%= link_to'消去', card_music_music_destroy_path(@card, music), method: :post, class: "btn btn-primary btn-outline" %>
+            </div>
+          </td>
+        </tr>
+        <%end%>
+      </tbody>
+    </table>
+    <% if @musics.empty? %>
+    <div class="text-center my-5">
+      <h4>まだ楽曲が登録されていない様です</h4>
+      <%=link_to "追加する", new_card_music_path(@card), class: "btn btn-primary btn-outline"%>
+    </div>
+    <% end %>
+    <div class="text-right">
+      <%=link_to "追加", new_card_music_path(@card), class: "btn btn-primary btn-outline"%>
+    </div>
+  </div>
+</main>

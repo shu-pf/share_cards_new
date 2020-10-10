@@ -1,3 +1,4 @@
+console.log('読み込まれました');
 // プレビューを表示
 var input_file = document.getElementById("card_img");
 input_file.onchange = function (){
