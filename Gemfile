@@ -65,7 +65,7 @@ gem 'prawn'
 # 環境変数
 gem 'dotenv-rails'
 
-gem 'aws-sdk-s3'
+gem 'aws-sdk-s3', require: false
 # QRコード生成
 gem 'rqrcode'
 
