@@ -9,6 +9,8 @@ require("@rails/activestorage").start()
 require("channels")
 import 'bootstrap-material-design'
 import '../stylesheets/application'
+import * as ActiveStorage from "activestorage"
+ActiveStorage.start()
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

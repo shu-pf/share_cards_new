@@ -24,7 +24,7 @@
       </div>
       <div class="form-group">
         <%= f.label "音源*" %>
-        <%= f.file_field :music, class: "form-control-file", id: "music"%>
+        <%= f.file_field :music, direct_upload: true, class: "form-control-file", id: "music"%>
       </div>
       <div class="text-right">
         <%= f.submit "登録する",class: 'btn btn-primary btn-raised'%>
