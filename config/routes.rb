@@ -26,6 +26,8 @@ Rails.application.routes.draw do
   end
   resources :downloads do
     resources :download_musics
+    get 'mp3_zip', to: 'download_musics#mp3_zip'
+    get 'flac_zip', to: 'download_musics#flac_zip'
     resources :download_contents
   end
   devise_for :users

@@ -36,4 +36,7 @@ addEventListener("direct-upload:end", event => {
   const { id } = event.detail
   const element = document.getElementById(`direct-upload-${id}`)
   element.classList.add("direct-upload--complete")
+
+  var spinner = document.getElementById("spinner");
+  spinner.className = 'text-center';
 })
