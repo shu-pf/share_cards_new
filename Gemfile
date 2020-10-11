@@ -81,3 +81,7 @@ gem 'rails_12factor', group: :production
 gem 'streamio-ffmpeg'
 
 gem 'activestorage-validator'
+
+group :development, :test do
+  gem 'rails-erd'
+end
