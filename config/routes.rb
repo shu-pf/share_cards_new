@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  require 'sidekiq/web'
+  mount Sidekiq::Web, at: "/sidekiq"
+
   get 'admin/', to: 'admin#index'
   get 'admin/new_mail', to: 'admin#new_mail'
   post 'admin/send_mail', to: 'admin#send_mail'

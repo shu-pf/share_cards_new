@@ -82,6 +82,11 @@ gem 'streamio-ffmpeg'
 
 gem 'activestorage-validator'
 
+# ER図を自動生成
 group :development, :test do
   gem 'rails-erd'
 end
+
+# 非同期処理に必要(最新の6.0だとうまく動かなかった)
+# https://teratail.com/questions/235628
+gem 'sidekiq', '~> 5.0'

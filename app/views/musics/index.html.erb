@@ -8,6 +8,8 @@
         <tr>
           <th scope="col">No.</th>
           <th scope="col">タイトル</th>
+          <th scope="col">mp3</th>
+          <th scope="col">flac</th>
           <th scope="col">アーティスト名</th>
         </tr>
       </thead>
@@ -16,6 +18,24 @@
         <tr>
           <th><%=music.track_number%></th>
           <td><%=music.title%></td>
+          <td><span class="material-icons">
+          <%=
+          if music.music_mp3.attached?
+            'done'
+          else
+            'cached'
+          end
+          %></span>
+          </td>
+          <td><span class="material-icons">
+          <%=
+          if music.music_flac.attached?
+            'done'
+          else
+            'cached'
+          end
+          %></span>
+          </td>
           <td><%=music.artist_name%></td>
           <td>
             <div class="text-right">

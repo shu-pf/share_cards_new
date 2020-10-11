@@ -2,6 +2,7 @@ class MusicsController < ApplicationController
   def index
     @card = current_user.cards.find(params[:card_id])
     @musics = @card.musics.order(track_number: "ASC")
+    SampleJob.perform_later(@card.id)
   end
 
   def new
@@ -21,6 +22,8 @@ class MusicsController < ApplicationController
       render :new
       return
     end
+
+    AudioConversionJob.perform_later(@music.id, params[:card_id])
 
     # @music.music.open do |file|
     #   audio = FFMPEG::Movie.new(file.path)
