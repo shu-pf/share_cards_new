@@ -8,7 +8,7 @@
   </button>
 </div>
 <% end %>
-<main>
+<main id='main'>
   <div class="container">
     <h2 class="my-3">音源を登録</h2>
     <%=link_to "戻る", card_musics_url(@card), class: "btn btn-primary btn-outline"%>
@@ -27,9 +27,9 @@
         <%= f.file_field :music, direct_upload: true, class: "form-control-file", id: "music"%>
       </div>
       <div class="text-right">
-        <%= f.submit "登録する",class: 'btn btn-primary btn-raised'%>
+        <%= f.submit "登録する",class: 'btn btn-primary btn-raised', id: 'musics_submit'%>
       </div>
     <%end%>
   </div>
 </main>
-<%= javascript_pack_tag 'cards', 'data-turbolinks-track': 'reload' %>
+<%= javascript_pack_tag 'musics', 'data-turbolinks-track': 'reload' %>

@@ -7,7 +7,7 @@ class DownloadMusicsController < ApplicationController
         license = current_user.licenses.find(params[:download_id])
         card = license.license_group.card
         musics = card.musics
-        files = musics.map{ |music| [music.music, music.title] }
+        files = musics.map{ |music| ["#{music.music} - wav", "#{music.title} - #{music.artist_name}.zip"] }
         zipline(files, "#{card.title}.zip")
       }
     end
