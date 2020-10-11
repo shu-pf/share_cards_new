@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
   skip_before_action :authenticate_user!
   def index
+    redirect_to "https://www.share-cards.com/" if root_url = "https://share-cards.herokuapp.com/"
   end
   def topic
   end
