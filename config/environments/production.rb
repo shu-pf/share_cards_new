@@ -72,12 +72,13 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: 'smtp.gmail.com',
-    port: 587,
-    user_name: 'sharecards2020@gmail.com',
-    password: 'Shugo+651024',
-    authentication: 'plain',
-    domain: 'gmail.com'
+    :user_name => ENV['SENDGRID_USER_NAME'],
+    :password => ENV['SNEDGRID_PASSWORD'],
+    :domain => 'share-cards.com',
+    :address => 'smtp.sendgrid.net',
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
