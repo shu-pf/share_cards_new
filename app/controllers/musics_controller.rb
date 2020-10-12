@@ -2,7 +2,6 @@ class MusicsController < ApplicationController
   def index
     @card = current_user.cards.find(params[:card_id])
     @musics = @card.musics.order(track_number: "ASC")
-    SampleJob.perform_later(@card.id)
   end
 
   def new

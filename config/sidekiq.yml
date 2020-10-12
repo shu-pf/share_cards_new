@@ -1,0 +1,8 @@
+:verbose: false
+:concurrency: 25
+
+:queues:
+  - default
+  - event
+  - active_storage_analysis
+  - active_storage_purge

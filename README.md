@@ -63,10 +63,10 @@ Railsバージョン
 Rails 6.0.3.3
 ruby 2.6.6p146 (2020-03-31 revision 67876) [x86_64-linux]
 
-## 注意
-環境変数は上げてないのでそのままでは動きません。聞いてくれれば渡します！
-改修のときは必ずブランチを切ってください！
-マスターは必ず動く形にしたいです！
+Sidekiqの立ち上げ
+Redisの立ち上げ
+### (herokuのみ)
+heroku config:set MALLOC_ARENA_MAX=2
 
 ## Todoリスト
 - バリデーション
