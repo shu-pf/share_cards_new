@@ -1,8 +1,14 @@
 :verbose: false
-:concurrency: 25
+:concurrency: 5
+staging:
+  :concurrency: 10
+production:
+  :concurrency: 20
 
 :queues:
+  - critical
   - default
+  - low
   - event
-  - active_storage_analysis
-  - active_storage_purge
+  - [active_storage_analysis, 3]
+  - [active_storage_purge, 1]
