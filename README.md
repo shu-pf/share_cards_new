@@ -42,6 +42,17 @@ brew install ffmpeg
 ```
 
 #### 毎回
+Gitを更新とDB更新
+```
+git checkout master
+git pull
+rails db:migrate
+
+<!-- エラーが出た場合 -->
+rails db:reset
+rails db:migrate
+```
+
 Redisの立ち上げ
 ```
 redis-server
@@ -80,7 +91,7 @@ heroku config:set MALLOC_ARENA_MAX=2
 - 感想やコメントを受け付け(ダウンロードページのコメントフォームを作って作品への感想やコメントを受け付け。対面販売ではなかなか拾うことのできないユーザー様の声をキャッチできます。)
 
 ### イラストを追加する機能
-- 画像をスライドショー形式で表示する
+- 画像をスライドショー形式で表示する(slickを使う)
 
 ## Todoリスト(自分用)
 - 利用規約の作成
