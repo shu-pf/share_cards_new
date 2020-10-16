@@ -4,9 +4,129 @@
       <h1>よくある質問</h1>
     </div>
   </div>
-  <div class="d-md-none" style="padding-top: 100px;">
+  <div class="d-md-none mb-5" style="padding-top: 50px;">
     <div class="container">
-      <h1 style="font-size: 40px;">よくある質問</h1>
+      <h1 style="font-size: 30px;">よくある質問</h1>
     </div>
+  </div>
+  <div class="container">
+    <h3 id="serialcode-input">カードをSerialCodeの入力で登録したい</h3>
+    <section class="mb-3">
+      <h4 class="font-weight-bold mb-3 border-bottom">1. カードをSerialCodeの入力で登録したい</h4>
+      <div class="row">
+        <div class="col-md-5 mb-3">
+          <%= image_tag "use/smart-phone.jpg", class: "img-thumbnail", style: "object-fit: contain; height: 200px;" %>
+        </div>
+        <div class="col-md-7">
+          <p>PCでダウンロードする事も可能です。<br>その場合シリアルコードの手動入力が必要になります。</p>
+        </div>
+      </div>
+    </section>
+    <h3 id="serialcode-input">オリジナルデザインの作り方</h3>
+    <p>
+    ここでは代表的にPhotoshopとGIMPについて述べます。
+    </p>
+    <section class="mb-3">
+      <h4 class="font-weight-bold mb-3 border-bottom">1. Photoshopでの作り方</h4>
+      <div class="row">
+        <div class="col-md-5 mb-3">
+          <%= image_tag "question/Photoshop1.png", class: "img-thumbnail", style: "object-fit: contain; height: 200px;" %>
+        </div>
+        <div class="col-md-7">
+          <p>
+          【フォーマット番号：F10A4-1の場合】<br>
+          Photoshop起動→新規作成より<br>
+          ・幅 91mm <br>
+          ・高さ 55mm <br>
+          ・解像度 350ピクセル/インチ <br>
+          ・RGBカラー <br>
+          を設定し、作成をします。
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-5 mb-3">
+          <%= image_tag "question/Photoshop2.png", class: "img-thumbnail", style: "object-fit: contain; height: 200px;" %>
+        </div>
+        <div class="col-md-7">
+          <p>
+          絵柄を作成します。
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-5 mb-3">
+          <%= image_tag "question/Photoshop3.png", class: "img-thumbnail", style: "object-fit: contain; height: 200px;" %>
+        </div>
+        <div class="col-md-7">
+          <p>
+          余白を設定します。<br>
+          シェイプを選択し、2mmの外枠を作ります。<br>
+          ※余白は白色である必要があります。<br>
+          余白がなければ、柄がはみ出す事があります。
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-5 mb-3">
+          <%= image_tag "question/Photoshop4.png", class: "img-thumbnail", style: "object-fit: contain; height: 200px;" %>
+        </div>
+        <div class="col-md-7">
+          <p>
+          完成です
+          </p>
+        </div>
+      </div>
+      <h4 class="font-weight-bold mb-3 border-bottom">2. GIMP(無料)の場合</h4>
+      <div class="row">
+        <div class="col-md-5 mb-3">
+          <%= image_tag "question/Photoshop1.png", class: "img-thumbnail", style: "object-fit: contain; height: 200px;" %>
+        </div>
+        <div class="col-md-7">
+          <p>
+          </p>
+        </div>
+      </div>
+    </section>
+    <h3 id="compatible-paper">対応してるカード用紙は？</h3>
+    <section class="mb-3">
+      <h4 class="font-weight-bold mb-3 border-bottom">1. カード用紙</h4>
+      <div class="row">
+        <div class="col-md-5 mb-3">
+          <%= image_tag "question/F51002_O.jpg", class: "img-thumbnail", style: "object-fit: contain; height: 200px;" %>
+        </div>
+        <div class="col-md-7">
+          <p>
+          現在A-oneの用紙に対応しています。<br>
+          A-oneの用紙には余白の付き方によってフォーマット番号が振られております。<br><br>
+          対応しているフォーマット番号は <span class="text-danger">【F10A4-1】</span>です。<br>
+          必ずフォーマット番号をご確認ください。<br>
+          また、<span class="text-danger">必ず白無地(色柄・透明柄は不可)</span>を使用してください。<br>
+          ※色付きや透明柄はQRが読み取れない可能性があります。<br><br>
+          【推奨用紙】<br>
+          エーワン 名刺 マルチカード クリアエッジ 厚口 51861タイプ<br>
+          エーワン マルチカード 名刺 厚口  51276
+          </p>
+        </div>
+      </div>
+      <h4 class="font-weight-bold mb-3 border-bottom">2. ラベル用紙</h4>
+      <div class="row">
+        <div class="col-md-5 mb-3">
+          <%= image_tag "question/F31262_O.jpg", class: "img-thumbnail", style: "object-fit: contain; height: 200px;" %>
+        </div>
+        <div class="col-md-7">
+          <p>
+          現在A-oneの用紙に対応しています。<br>
+          A-oneの用紙には余白の付き方によってフォーマット番号が振られております。<br><br>
+          対応しているフォーマット番号は <span class="text-danger">【F44A4-1】</span>です。<br>
+          必ずフォーマット番号をご確認ください。<br>
+          また、<span class="text-danger">必ず白無地(色柄・透明柄は不可)</span>を使用してください。<br>
+          ※色付きや透明柄はQRが読み取れない可能性があります。<br><br>
+          【推奨用紙】<br>
+          エーワン ラベルシール 44面 22シート 72244
+          </p>
+        </div>
+      </div>
+    </section>
   </div>
 </main>

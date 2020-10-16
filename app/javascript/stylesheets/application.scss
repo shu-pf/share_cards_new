@@ -112,3 +112,8 @@ h1,h2,h3 {
 input[type=file][data-direct-upload-url][disabled] {
   display: none;
 }
+
+#serialcode-input {
+  padding-top:80px;
+  margin-top:-80px;
+}

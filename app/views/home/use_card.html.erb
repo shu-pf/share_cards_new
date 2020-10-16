@@ -1,0 +1,98 @@
+<main>
+  <div class="jumbotron jumbotron-fluid d-none d-md-block" style="background-image:url(<%= asset_path 'side-jumbotron.png' %>); height: 550px; background-position: center;">
+    <div class="container" style="position: relative; top: 50%; transform: translateY(-50%);">
+      <h1>利用方法<br>カードを貰った</h1>
+    </div>
+  </div>
+  <div class="d-md-none mb-5" style="padding-top: 50px;">
+    <div class="container">
+      <h1 style="font-size: 30px;">利用方法<br>カードを貰った</h1>
+    </div>
+  </div>
+  <div class="container">
+    <section class="mb-3">
+      <h4 class="font-weight-bold mb-3 border-bottom">1. スマホを用意します</h4>
+      <div class="row">
+        <div class="col-md-5 mb-3">
+          <%= image_tag "use/smart-phone.jpg", class: "img-thumbnail", style: "object-fit: contain; height: 200px;" %>
+        </div>
+        <div class="col-md-7">
+          <p>PCでダウンロードする事も可能です。<br>その場合シリアルコードの手動入力が必要になります。</p>
+        </div>
+      </div>
+    </section>
+    <section class="mb-3">
+      <h4 class="font-weight-bold mb-3 border-bottom">2. トップページより「ダウンロードする」を選択します</h4>
+      <div class="row">
+        <div class="col-md-5 mb-3">
+          <%= image_tag "use/toppage.png", class: "img-thumbnail", style: "object-fit: contain; height: 200px;" %>
+        </div>
+      </div>
+    </section>
+    <section class="mb-3">
+      <h4 class="font-weight-bold mb-3 border-bottom">3. ログインをする</h4>
+      <div class="row">
+        <div class="col-md-5 mb-3">
+          <%= image_tag "use/login.png", class: "img-thumbnail", style: "object-fit: contain; height: 200px;" %>
+        </div>
+        <div class="col-md-7">
+          <p>初回利用の場合アカウントを作成をします</p>
+        </div>
+      </div>
+    </section>
+    <section class="mb-3">
+      <h4 class="font-weight-bold mb-3 border-bottom">4. カードの「QRコード」を読み取ります</h4>
+      <div class="row">
+        <div class="col-md-5 mb-3">
+          <%= image_tag "card_back.png", class: "img-thumbnail", style: "object-fit: contain; height: 200px;" %>
+        </div>
+        <div class="col-md-7">
+          <p>カメラアプリを起動し、お持ちのカードの裏面に記載されております「QRコード」を読み取ります<br>
+          ※読み取れない場合・PCでの登録の場合、手動で登録する事も可能です<br>
+          詳しくは、<%=link_to "こちら",question_path + "#serialcode-input"%>を御覧ください</p>
+        </div>
+      </div>
+    </section>
+    <section class="mb-3">
+      <h4 class="font-weight-bold mb-3 border-bottom">5. カードを登録します</h4>
+      <div class="row">
+        <div class="col-md-5 mb-3">
+          <%= image_tag "use/serialcode.png", class: "img-thumbnail", style: "object-fit: contain; height: 200px;" %>
+        </div>
+        <div class="col-md-7">
+          <p>QRコードにより、シリアルコードは自動入力されます。</p>
+        </div>
+      </div>
+    </section>
+    <section class="mb-3">
+      <h4 class="font-weight-bold mb-3 border-bottom">5. カードが登録されます</h4>
+      <div class="row">
+        <div class="col-md-5 mb-3">
+          <%= image_tag "use/download-page.png", class: "img-thumbnail", style: "object-fit: contain; height: 200px;" %>
+        </div>
+        <div class="col-md-7">
+          <p>お持ちのカードが登録されます</p>
+        </div>
+      </div>
+    </section>
+    <section class="mb-3">
+      <h4 class="font-weight-bold mb-3 border-bottom">5. 詳細画面を開きます</h4>
+      <div class="row">
+        <div class="col-md-5 mb-3">
+          <%= image_tag "use/download.png", class: "img-thumbnail", style: "object-fit: contain; height: 200px;" %>
+        </div>
+        <div class="col-md-7">
+          <p>ブラウザ上での音源の再生や、ダウンロードなど行えます</p>
+        </div>
+      </div>
+    </section>
+    <section class="mb-3">
+      <h4 class="font-weight-bold mb-3 border-bottom">5. コンテンツを楽しみましょう</h4>
+      <div class="row">
+        <div class="col-md-5 mb-3">
+          <%= image_tag "top-img2.png", class: "img-thumbnail", style: "object-fit: contain; height: 200px;" %>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>

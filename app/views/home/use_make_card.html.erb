@@ -1,0 +1,131 @@
+<main>
+  <div class="jumbotron jumbotron-fluid d-none d-md-block" style="background-image:url(<%= asset_path 'side-jumbotron.png' %>); height: 550px; background-position: center;">
+    <div class="container" style="position: relative; top: 50%; transform: translateY(-50%);">
+      <h1>利用方法<br>カード・ラベルを作成</h1>
+    </div>
+  </div>
+  <div class="d-md-none mb-5" style="padding-top: 50px;">
+    <div class="container">
+      <h1 style="font-size: 30px;">利用方法<br>カード・ラベルを作成</h1>
+    </div>
+  </div>
+  <div class="container">
+    <section class="mb-3">
+      <h4 class="font-weight-bold mb-3 border-bottom">1. カード・ラベル用紙を用意します</h4>
+      <div class="row">
+        <div class="col-md-5 mb-3">
+          <%= image_tag "a-one1.png", class: "img-thumbnail", style: "object-fit: contain; height: 200px;" %>
+        </div>
+        <div class="col-md-7">
+          <p>
+          市販の名刺作成用・ラベル作成用用紙を用意します。<br>
+          必ず対応用紙を確認の上ご用意ください。<br>
+          ※対応用紙一覧は<%=link_to "こちら",question_path + "#serialcode-input"%><br>
+          □名刺の場合カードをそのまま配布する事ができます。<br>
+          □ラベルの場合は商品に直接貼る事ができます。
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-5 mb-3">
+          <%= image_tag "use/card.jpg", class: "img-thumbnail", style: "object-fit: contain; height: 200px;" %>
+        </div>
+        <div class="col-md-7">
+          <p>
+          □カードの場合の完成イメージです。
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-5 mb-3">
+          <%= image_tag "use/label.jpg", class: "img-thumbnail", style: "object-fit: contain; height: 200px;" %>
+        </div>
+        <div class="col-md-7">
+          <p>
+          □ラベルの場合の完成イメージです。
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="mb-3">
+      <h4 class="font-weight-bold mb-3 border-bottom">2. トップページより「カードを作る」を選択します</h4>
+      <div class="row">
+        <div class="col-md-5 mb-3">
+          <%= image_tag "use/toppage.png", class: "img-thumbnail", style: "object-fit: contain; height: 200px;" %>
+        </div>
+      </div>
+    </section>
+    <section class="mb-3">
+      <h4 class="font-weight-bold mb-3 border-bottom">3. ログインをする</h4>
+      <div class="row">
+        <div class="col-md-5 mb-3">
+          <%= image_tag "use/login.png", class: "img-thumbnail", style: "object-fit: contain; height: 200px;" %>
+        </div>
+        <div class="col-md-7">
+          <p>初回利用の場合アカウントを作成をします</p>
+        </div>
+      </div>
+    </section>
+    <section class="mb-3">
+      <h4 class="font-weight-bold mb-3 border-bottom">3. もう一度トップページより「カードを作る」を選択します</h4>
+      <div class="row">
+        <div class="col-md-5 mb-3">
+          <%= image_tag "use/toppage.png", class: "img-thumbnail", style: "object-fit: contain; height: 200px;" %>
+        </div>
+      </div>
+    </section>
+    
+    <section class="mb-3">
+      <h4 class="font-weight-bold mb-3 border-bottom">4. 「カードテンプレートの作成」を選択</h4>
+      <div class="row">
+        <div class="col-md-5 mb-3">
+          <%= image_tag "use/cards.png", class: "img-thumbnail", style: "object-fit: contain; height: 200px;" %>
+        </div>
+        <div class="col-md-7">
+          <p>「カードテンプレートの作成」ボタンを押します</p>
+        </div>
+      </div>
+    </section>
+    <section class="mb-3">
+      <h4 class="font-weight-bold mb-3 border-bottom">5. カードテンプレートの作成</h4>
+      <div class="row">
+        <div class="col-md-5 mb-3">
+          <%= image_tag "use/card_new.png", class: "img-thumbnail", style: "object-fit: contain; height: 200px;" %>
+        </div>
+        <div class="col-md-7">
+          <p>
+          この部分ではカード・ラベルの基本情報を入力します<br>
+          <br>
+          □タイトル：作品名などを入力します。購入者のダウンロードページなどで表示されます。<br>
+          □作成者：アーティスト名など。購入者のダウンロードページなどで表示されます。<br>
+          □用紙選択：カード・ラベル作成に使用する用紙を選択します<br>
+          □デザインの選択：デザインが選択できます。オリジナルのデザインにしたい場合、「オリジナルのデザイン」を選択し、デザインのアップロードを行います。<br>
+          <br>
+          ※オリジナルのデザインを使用する場合は「<%=link_to "きれいに印刷できる絵柄は？",question_path + "#serialcode-input"%>」を御覧ください。<br>
+          ※ラベルで作成する場合、ラベルにはこのデザインは反映されません。片面しか無いためです。<br>
+          しかし、購入者のダウンロードページには反映されます。
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="mb-3">
+      <h4 class="font-weight-bold mb-3 border-bottom">4. 「カードテンプレートの作成」を選択</h4>
+      <div class="row">
+        <div class="col-md-5 mb-3">
+          <%= image_tag "use/cards.png", class: "img-thumbnail", style: "object-fit: contain; height: 200px;" %>
+        </div>
+        <div class="col-md-7">
+          <p>「カードテンプレートの作成」ボタンを押します</p>
+        </div>
+      </div>
+    </section>
+    <section class="mb-3">
+      <h4 class="font-weight-bold mb-3 border-bottom">5. コンテンツを楽しみましょう</h4>
+      <div class="row">
+        <div class="col-md-5 mb-3">
+          <%= image_tag "top-img2.png", class: "img-thumbnail", style: "object-fit: contain; height: 200px;" %>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>

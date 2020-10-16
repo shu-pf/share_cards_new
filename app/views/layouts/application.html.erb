@@ -29,8 +29,15 @@
           <li class="nav-item active">
             <%= link_to "トピックス", topic_path,class: "nav-link"%>
           </li>
-          <li class="nav-item active">
-            <%= link_to "使い方", use_path,class: "nav-link"%>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle active" id="navbarDropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            使い方
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenu">
+              <%= link_to "カードを貰った", use_card_path, class: "dropdown-item" %>
+              <%= link_to "ラベルを貰った", use_label_path, class: "dropdown-item" %>
+              <%= link_to "カード・ラベルを作成", use_make_card_path, class: "dropdown-item" %>
+            </div>
           </li>
           <li class="nav-item active">
             <%= link_to "よくある質問", question_path,class: "nav-link"%>

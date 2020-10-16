@@ -36,7 +36,9 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "home#index"
   get 'topic', to: 'home#topic'
-  get 'use', to: 'home#use'
+  get 'use_card', to: 'home#use_card'
+  get 'use_label', to: 'home#use_label'
+  get 'use_make_card', to: 'home#use_make_card'
   get 'question', to: 'home#question'
   get 'contact', to: 'home#contact'
   post :contact, to: 'home#contact_confirm'

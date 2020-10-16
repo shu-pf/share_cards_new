@@ -4,7 +4,7 @@ class Music < ApplicationRecord
   has_one_attached :music_flac
 
   validates :title, presence: true
-  # validates :music, presence: true, blob: { content_type: ['audio/wav', 'audio/x-wav'] }
+  validates :music, presence: true, blob: { content_type: ['audio/wav', 'audio/x-wav'] }
   validates :music, presence: true
   validates :artist_name, presence: true
 end

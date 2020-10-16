@@ -5,9 +5,14 @@ class HomeController < ApplicationController
   end
   def topic
   end
-  def use
+
+  def use_card
   end
-  def question
+
+  def use_label
+  end
+  
+  def use_make_card
   end
   
   def contact

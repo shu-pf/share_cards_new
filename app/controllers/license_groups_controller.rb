@@ -85,7 +85,7 @@ class LicenseGroupsController < ApplicationController
     card = Card.find(params[:card_id])
     license_group = LicenseGroup.find(params[:license_group_id])
 
-    if card.format == '31268'
+    if card.format == 'F44A4-1'
       pdf = Prawn::Document.new(page_size: 'A4',top_margin: (8.8).mm, bottom_margin: (8.8).mm, left_margin: (8.4).mm, right_margin: (8.4).mm)
       pdf.font "app/assets/fonts/AnonymousPro-Regular.ttf"
 
@@ -132,7 +132,7 @@ class LicenseGroupsController < ApplicationController
         pdf.start_new_page
         m+=1
       end
-    elsif card.format == '51861E'
+    elsif card.format == 'F10A4-1'
       pdf = CardPdf.new()
       pdf.font "app/assets/fonts/AnonymousPro-Regular.ttf"
 

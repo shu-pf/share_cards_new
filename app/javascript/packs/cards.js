@@ -40,3 +40,20 @@ design_type.onchange = function (){
       console.log(design_type.selectedIndex);
   }
 };
+
+var edge_blank = document.getElementById("edge_blank");
+edge_blank.onchange = function (){
+  var background_preview = document.getElementById("background-preview");
+  if (edge_blank.checked) {
+    background_preview.style.width = "98%";
+    background_preview.style.height = "98%";
+    background_preview.style.left = "1%";
+    background_preview.style.top = "1%";
+  } else
+  {
+    background_preview.style.width = "100%";
+    background_preview.style.height = "100%";
+    background_preview.style.left = "0%";
+    background_preview.style.top = "0%";
+  }
+};
