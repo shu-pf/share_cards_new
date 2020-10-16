@@ -9,11 +9,21 @@ ja:
     models:
       content: コンテンツ
       card: カード
+      music: 音源
+      license_group: ライセンスグループ
     attributes:
       card:
         title: タイトル
         auther_name: 作者名
         card_img: カードデザイン
+      music:
+        title: タイトル
+        music: 音源
+        artist_name: アーティスト名
+      content:
+        content: コンテンツ
+      license_group:
+        number_of_licenses: カードの枚数
   date:
     abbr_day_names:
     - 日
