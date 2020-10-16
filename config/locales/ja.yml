@@ -1,4 +1,3 @@
----
 ja:
   activerecord:
     errors:
@@ -9,8 +8,12 @@ ja:
           has_many: "%{record}が存在しているので削除できません"
     models:
       content: コンテンツ
+      card: カード
     attributes:
-      title: タイトル
+      card:
+        title: タイトル
+        auther_name: 作者名
+        card_img: カードデザイン
   date:
     abbr_day_names:
     - 日

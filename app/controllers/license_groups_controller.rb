@@ -61,8 +61,12 @@ class LicenseGroupsController < ApplicationController
           5.times { |i|
             y = 55.mm * (i + 1)
             pdf.bounding_box([x, y], width: 91.mm, height: 55.mm) do
-              pdf.image file.path, position: :center, vposition: :center, fit: [91.mm, 55.mm]
-              # pdf.stroke_bounds
+              if card.edge_blank
+                pdf.image file.path, position: :center, vposition: :center, fit: [87.mm, 51.mm]
+                # pdf.stroke_bounds
+              else
+                pdf.image file.path, position: :center, vposition: :center, fit: [91.mm, 55.mm]
+              end
             end
             if i + j*5 + m*10 >= license_group.licenses.count-1
               flag = true

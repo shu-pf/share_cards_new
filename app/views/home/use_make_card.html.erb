@@ -100,8 +100,9 @@
           □作成者：アーティスト名など。購入者のダウンロードページなどで表示されます。<br>
           □用紙選択：カード・ラベル作成に使用する用紙を選択します<br>
           □デザインの選択：デザインが選択できます。オリジナルのデザインにしたい場合、「オリジナルのデザイン」を選択し、デザインのアップロードを行います。<br>
+          □フチあり：オリジナルのデザインをそのまま使用する際にご利用ください。<br>
           <br>
-          ※オリジナルのデザインを使用する場合は「<%=link_to "きれいに印刷できる絵柄は？",question_path + "#serialcode-input"%>」を御覧ください。<br>
+          ※オリジナルのデザインを使用する場合は「<%=link_to "オリジナルデザインの作り方",question_path + "#original-design"%>」を御覧ください。<br>
           ※ラベルで作成する場合、ラベルにはこのデザインは反映されません。片面しか無いためです。<br>
           しかし、購入者のダウンロードページには反映されます。
           </p>
@@ -109,21 +110,53 @@
       </div>
     </section>
     <section class="mb-3">
-      <h4 class="font-weight-bold mb-3 border-bottom">4. 「カードテンプレートの作成」を選択</h4>
+      <h4 class="font-weight-bold mb-3 border-bottom">6. データのアップロード</h4>
       <div class="row">
         <div class="col-md-5 mb-3">
-          <%= image_tag "use/cards.png", class: "img-thumbnail", style: "object-fit: contain; height: 200px;" %>
+          <%= image_tag "use/card.png", class: "img-thumbnail", style: "object-fit: contain; height: 200px;" %>
         </div>
         <div class="col-md-7">
-          <p>「カードテンプレートの作成」ボタンを押します</p>
+          <p>
+          カードが作成されました。<br><br>
+          続いてカードに登録するコンテンツをアップロードします。<br>
+          【音楽・音声】音声や音楽を登録します。<br>
+          【コンテンツ】その他のコンテンツを登録します。
+          </p>
         </div>
       </div>
     </section>
     <section class="mb-3">
-      <h4 class="font-weight-bold mb-3 border-bottom">5. コンテンツを楽しみましょう</h4>
+      <h4 class="font-weight-bold mb-3 border-bottom">6. シリアルコード付きのカードを作成します</h4>
       <div class="row">
         <div class="col-md-5 mb-3">
-          <%= image_tag "top-img2.png", class: "img-thumbnail", style: "object-fit: contain; height: 200px;" %>
+          <%= image_tag "use/card2.png", class: "img-thumbnail", style: "object-fit: contain; height: 200px;" %>
+        </div>
+        <div class="col-md-7">
+          <p>
+          データのアップロードが終わったら、下にある「シリアルコード付きのカードを作成」から、作成を選択します。<br>
+          続いて配布するカードの枚数(発行するライセンスの数)を入力します。
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="mb-3">
+      <h4 class="font-weight-bold mb-3 border-bottom">7. 印刷</h4>
+      <div class="row">
+        <div class="col-md-5 mb-3">
+          <span class="material-icons" style="font-size: 150px;">print</span>
+        </div>
+        <div class="col-md-7">
+          <p>
+          カードを印刷します。
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="mb-3">
+      <h4 class="font-weight-bold mb-3 border-bottom">8. カードを販売します</h4>
+      <div class="row">
+        <div class="col-md-5 mb-3">
+          <span class="material-icons" style="font-size: 150px;">shop</span>
         </div>
       </div>
     </section>

@@ -2,10 +2,13 @@
   <div class="container">
     <div class="text-center my-5">
       <h3>ダウンロードカードが作成されました！</h3>
-      <p>下のリンクより、カードのデータを印刷することが出来ます。</p>
+      <p>下のリンクより、カードのデータを印刷することが出来ます。<br>
+      リンクを開いてから少々時間がかかります。<br><br>
+      ※枚数が多い場合・カードの画像が重い場合エラーになることがあります。<br>その場合、枚数を減らすか、カードの画像の解像度をへらすようにお願いたします。</p>
       <p>
+       <span class="text-danger">
       【印刷時のご注意】
-      詳細設定にある倍率は、[100％]を設定してください。
+      詳細設定にある倍率は、[100％]を設定してください。</span>
       </p>
       <%if @card.format == 'F44A4-1'%>
         <%= link_to "印刷データはこちら", card_license_group_download_back_path(@card, @license_group), class: "btn btn-outline-primary mb-3", :target=>["_blank"] %>

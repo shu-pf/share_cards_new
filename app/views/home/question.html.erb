@@ -12,17 +12,20 @@
   <div class="container">
     <h3 id="serialcode-input">カードをSerialCodeの入力で登録したい</h3>
     <section class="mb-3">
-      <h4 class="font-weight-bold mb-3 border-bottom">1. カードをSerialCodeの入力で登録したい</h4>
+      <h4 class="font-weight-bold mb-3 border-bottom">カードをSerialCodeの入力で登録したい</h4>
       <div class="row">
         <div class="col-md-5 mb-3">
           <%= image_tag "use/smart-phone.jpg", class: "img-thumbnail", style: "object-fit: contain; height: 200px;" %>
         </div>
         <div class="col-md-7">
-          <p>PCでダウンロードする事も可能です。<br>その場合シリアルコードの手動入力が必要になります。</p>
+          <p>
+          <%= link_to  "登録ページ", rgs_path %>
+          より新規登録できます。
+          </p>
         </div>
       </div>
     </section>
-    <h3 id="serialcode-input">オリジナルデザインの作り方</h3>
+    <h3 id="original-design">オリジナルデザインの作り方</h3>
     <p>
     ここでは代表的にPhotoshopとGIMPについて述べます。
     </p>
@@ -40,7 +43,9 @@
           ・高さ 55mm <br>
           ・解像度 350ピクセル/インチ <br>
           ・RGBカラー <br>
-          を設定し、作成をします。
+          を設定し、作成をします。<br>
+          すでに作成したテンプレートファイルもあります。<br>
+          <a href="<%=root_url%>/question/F10A4-1.psd" download>【Photoshop-フォーマット番号：F10A4-1】</a>
           </p>
         </div>
       </div>
@@ -73,17 +78,49 @@
         </div>
         <div class="col-md-7">
           <p>
-          完成です
+          完成です<br>
+          デザインでフチを作っているので、フチはなしを選択します。
           </p>
         </div>
       </div>
       <h4 class="font-weight-bold mb-3 border-bottom">2. GIMP(無料)の場合</h4>
       <div class="row">
         <div class="col-md-5 mb-3">
-          <%= image_tag "question/Photoshop1.png", class: "img-thumbnail", style: "object-fit: contain; height: 200px;" %>
+          <%= image_tag "question/gimp.png", class: "img-thumbnail", style: "object-fit: contain; height: 200px;" %>
         </div>
         <div class="col-md-7">
           <p>
+          GIMPをダウンロード・インストールします。<br>
+          <a href="https://www.gimp.org/downloads/" target="_blank">https://www.gimp.org/downloads/</a>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-5 mb-3">
+          <%= image_tag "question/gimp2.png", class: "img-thumbnail", style: "object-fit: contain; height: 200px;" %>
+        </div>
+        <div class="col-md-7">
+          <p>
+          【フォーマット番号：F10A4-1の場合】<br>
+          GIMP起動→新規作成より<br>
+          ・幅 91mm <br>
+          ・高さ 55mm <br>
+          ・解像度 350ピクセル/インチ <br>
+          ・RGBカラー <br>
+          を設定し、作成をします。<br>
+          すでに作成したテンプレートファイルもあります。<br>
+          <a href="<%=root_url%>/question/F10A4-1.xcf" download>【GIMP-フォーマット番号：F10A4-1】</a>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-5 mb-3">
+          <%= image_tag "question/gimp3.png", class: "img-thumbnail", style: "object-fit: contain; height: 200px;" %>
+        </div>
+        <div class="col-md-7">
+          <p>
+          余白の内側に柄を作成したら完成です。<br>
+          デザインでフチを作っているので、フチはなしを選択します。
           </p>
         </div>
       </div>
