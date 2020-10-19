@@ -18,6 +18,7 @@ class MusicsController < ApplicationController
     @music.track_number = musics.size + 1
     if @music.save
     else
+      @music.music.purge
       render :new
       return
     end
