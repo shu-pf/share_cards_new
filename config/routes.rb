@@ -44,5 +44,7 @@ Rails.application.routes.draw do
   post :contact, to: 'home#contact_confirm'
   post 'contact_create', to: 'home#contact_create'
   get 'contact_complete', to: 'home#contact_complete'
+  get 'terms_of_service', to: 'home#terms_of_service'
+  get 'privacy_policy', to: 'home#privacy_policy'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
