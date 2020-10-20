@@ -30,6 +30,13 @@
           <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
         </div>
 
+        <p>カードを制作する場合は以下にチェックが必要です。</p>
+
+        <div class="form-check">
+          <%= f.check_box :creator, class: "form-check-input", id: "creator"%>
+          <%= f.label "カード制作用アカウント(クリエイターユーザー)", class: "form-check-label" %>
+        </div>
+
         <h4 class="mt-4">利用規約</h4>
         <textarea name="privacy" rows="10" readonly="readonly" style="width: 100%;">
 本利用規約（以下「本規約」と言います。）には、本サービスの提供条件及び当社と登録ユーザーの皆様との間の権利義務関係が定められています。本サービスの利用に際しては、本規約の全文をお読みいただいたうえで、本規約に同意いただく必要があります。

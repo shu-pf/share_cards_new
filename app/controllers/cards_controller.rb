@@ -1,4 +1,6 @@
 class CardsController < ApplicationController
+  before_action :if_not_creator
+
   def index
     @cards = current_user.cards
   end
@@ -78,5 +80,9 @@ class CardsController < ApplicationController
       # とりあえずなので要修正
       params[:card] = {title: ""}
     end
+  end
+
+  def if_not_creator
+    redirect_to edit_user_registration_path, notice: "カードを作成するには、ユーザー詳細よりクリエイターユーザーに変更してください" unless current_user.creator?
   end
 end

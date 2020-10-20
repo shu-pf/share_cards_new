@@ -23,7 +23,7 @@
         <% end %>
 
         <div class="form-group">
-          <%= f.label :password %> <i>(変更したくない場合は空欄にしてください)</i>
+          <%= f.label "新しいパスワード" %> <i>(変更したくない場合は空欄にしてください)</i>
           <%= f.password_field :password, autocomplete: "new-password", class: "form-control"  %>
           <% if @minimum_password_length %>
             <br />
@@ -32,13 +32,20 @@
         </div>
 
         <div class="form-group">
-          <%= f.label :password_confirmation %><br />
+          <%= f.label :password_confirmation %> <i>(変更したくない場合は空欄にしてください)</i><br />
           <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control"  %>
         </div>
 
         <div class="form-group">
-          <%= f.label :current_password %> <i>(変更するには現在のパスワードが必要です)</i><br />
+          <%= f.label :current_password %> <i>(ユーザー情報を変更するには現在のパスワードが必要です)</i><br />
           <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control"  %>
+        </div>
+
+        <p>カードを制作する場合は以下にチェックが必要です。</p>
+
+        <div class="form-check">
+          <%= f.check_box :creator, class: "form-check-input", id: "creator"%>
+          <%= f.label "カード制作用アカウント(クリエイターユーザー)", class: "form-check-label" %>
         </div>
 
         <div class="actions">
