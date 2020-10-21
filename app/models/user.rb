@@ -12,10 +12,7 @@ class User < ApplicationRecord
 
   def check_number_of_creator
     if creator?
-      puts User.where(creator: true).count
-      if User.where(creator: true).count > 59
-        errors.add(:base ,"現在60人以上のカード制作用アカウント新規の受付はしていません")
-      end
+      errors.add(:base ,"現在プレリリース期間の為カード制作用アカウントの作成は、お問い合わせより承っております。")
     end
   end
 end
