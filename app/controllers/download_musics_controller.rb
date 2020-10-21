@@ -41,6 +41,6 @@ class DownloadMusicsController < ApplicationController
     license = current_user.licenses.find(params[:download_id])
     card = license.license_group.card
     @music = card.musics.find(params[:id])
-    @file = @music.music_flac
+    @file = @music.music
   end
 end
