@@ -26,7 +26,8 @@
   "env": {
     "RAILS_ENV": "production",
     "RACK_ENV": "production",
-    "RAILS_SERVE_STATIC_FILES": "true"
+    "RAILS_SERVE_STATIC_FILES": "true",
+    "MAILER_URL": "change_to_correct_url"
   },
   "addons": ["heroku-postgresql","heroku-redis"]
 }
