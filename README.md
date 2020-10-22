@@ -33,6 +33,7 @@ Ruby：ruby 2.6.6
 - Ruby on Rails
 - FFmpeg
 - Redis
+- Postgres
 
 #### 最初の起動時にする事
 環境変数の設定が必要  
@@ -41,17 +42,17 @@ Ruby：ruby 2.6.6
 #### 起動手順
 Redisの立ち上げ
 ```
-redis-server
+$ redis-server
 ```
 
 Sidekiqの立ち上げ
 ```
-bundle exec sidekiq
+$ bundle exec sidekiq
 ```
 
 Railsの立ち上げ
 ```
-rails s
+$ rails s
 ```
 
 ### herokuの場合の環境構築(書きかけ)
