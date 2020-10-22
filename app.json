@@ -10,6 +10,16 @@
       "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
     }
   ],
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "standard-1x"
+    },
+    "worker": {
+      "quantity": 1,
+      "size": "standard-1x"
+    }
+  },
   "env": {
     "RAILS_ENV": "production",
     "RACK_ENV": "production",
