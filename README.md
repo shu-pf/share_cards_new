@@ -71,3 +71,4 @@ heroku config:set MALLOC_ARENA_MAX=2
 
 ### イラストを追加する機能
 - 画像をスライドショー形式で表示する(slickを使う)
+- 
