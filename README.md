@@ -26,33 +26,20 @@ https://www.share-cards.com/
 ### バージョン情報
 Railsバージョン
 Rails 6.0.3.3
-ruby 2.6.6p146 (2020-03-31 revision 67876) [x86_64-linux]
+ruby 2.6.6
 
 ### ローカルでの環境構築手順
-#### 一度のみ
+#### インストールが必要なもの
+- Ruby
+- Ruby on Rails
+- FFmpeg
+- Redis
+
+#### 最初の起動時にする事
 環境変数
-```
-.envのファイルをもらう
-```
+.envのファイルを貰ってアプリ直下に入れる。
 
-ffmpegのインストール
-```
-<!-- macの場合 -->
-brew install ffmpeg
-```
-
-#### 毎回
-Gitを更新とDB更新
-```
-git checkout master
-git pull
-rails db:migrate
-
-<!-- エラーが出た場合 -->
-rails db:reset
-rails db:migrate
-```
-
+#### 起動手順
 Redisの立ち上げ
 ```
 redis-server
