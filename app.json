@@ -8,16 +8,19 @@
   "buildpacks": [
     {
       "url": "https://github.com/heroku/heroku-buildpack-activestorage-preview"
+    },
+    {
+      "url": "heroku/ruby"
     }
   ],
   "formation": {
     "web": {
       "quantity": 1,
-      "size": "standard-1x"
+      "size": "free"
     },
     "worker": {
       "quantity": 1,
-      "size": "standard-1x"
+      "size": "free"
     }
   },
   "env": {
