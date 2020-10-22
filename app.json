@@ -5,6 +5,11 @@
   "scripts": {
     "postdeploy": "bundle exec rake db:migrate"
   },
+  "buildpacks": [
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+    }
+  ],
   "env": {
     "RAILS_ENV": "production",
     "RACK_ENV": "production",
