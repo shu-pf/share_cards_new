@@ -24,9 +24,8 @@ https://www.share-cards.com/
 
 # ローカルでの環境構築
 ### バージョン情報
-Railsバージョン
-Rails 6.0.3.3
-ruby 2.6.6
+Railsバージョン：Rails 6.0.3.3  
+Ruby：ruby 2.6.6  
 
 ### ローカルでの環境構築手順
 #### インストールが必要なもの
