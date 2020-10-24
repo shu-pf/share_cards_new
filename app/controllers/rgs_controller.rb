@@ -22,7 +22,7 @@ class RgsController < ApplicationController
         # ライセンスの更新処理
         license = License.find_by(serial_code: serial_code)
         license.update(user_id: current_user.id)
-        redirect_to downloads_url, notice: "「#{license.license_group.card.title}」を登録しました。ダウンロードボタンからダウンロード出来ます。"
+        redirect_to downloads_url, notice: "「#{license.license_group.card.title}」を登録しました。詳細ページからダウンロード出来ます。"
       end
     else
       redirect_to rgs_url, alert: "無効なシリアルコードです"
