@@ -83,6 +83,6 @@ class CardsController < ApplicationController
   end
 
   def if_not_creator
-    redirect_to edit_user_registration_path, notice: "カードを作成するには、ユーザー詳細よりクリエイターユーザーに変更してください" unless current_user.creator?
+    redirect_to root_url, notice: "現在は視聴専用のユーザーです。カードは作成出来ません。カードを作成するにはお問い合わせください。" unless current_user.creator?
   end
 end

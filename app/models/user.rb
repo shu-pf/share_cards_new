@@ -10,6 +10,7 @@ class User < ApplicationRecord
 
   validate :check_number_of_creator
 
+  # フォームで悪意のある送り方をされた場合
   def check_number_of_creator
     if creator?
       errors.add(:base ,"現在プレリリース期間の為カード制作用アカウントの作成は、お問い合わせより承っております。")
