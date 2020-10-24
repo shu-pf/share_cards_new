@@ -59,7 +59,7 @@
           </li>
           <% if user_signed_in? %>
           <li class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle active" id="navbarDropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%=current_user.username%></a>
+            <a href="#" class="nav-link dropdown-toggle active" id="navbarDropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="text-transform: none;"><%=current_user.username%></a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenu">
               <%= link_to "ユーザー詳細", edit_user_registration_path, class: "dropdown-item" %>
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
