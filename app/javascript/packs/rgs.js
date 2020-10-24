@@ -3,7 +3,7 @@ camera.onclick = function (){
   const video = document.querySelector("video");
   video.className = "";
 
-  let p = navigator.mediaDevices.getUserMedia({ audio: false, video: true });
+  let p = navigator.mediaDevices.getUserMedia({ audio: false, video: { facingMode: "environment" } });
 
   p.then(function(stream) {
     video.srcObject = stream;
