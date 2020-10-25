@@ -7,7 +7,7 @@ class DownloadMusicsController < ApplicationController
         license = current_user.licenses.find(params[:download_id])
         card = license.license_group.card
         musics = card.musics
-        files = musics.map{ |music| [music.music, "#{music.title} - #{music.artist_name}.wav"] }
+        files = musics.map{ |music| [music.music, "#{music.track_number} - #{music.title} - #{music.artist_name}.wav"] }
         zipline(files, "#{card.title}-wav.zip")
       }
     end
@@ -19,7 +19,7 @@ class DownloadMusicsController < ApplicationController
         license = current_user.licenses.find(params[:download_id])
         card = license.license_group.card
         musics = card.musics
-        files = musics.map{ |music| [music.music_mp3, "#{music.title} - #{music.artist_name}.mp3"] }
+        files = musics.map{ |music| [music.music_mp3, "#{music.track_number} - #{music.title} - #{music.artist_name}.mp3"] }
         zipline(files, "#{card.title}-mp3.zip")
       }
     end
@@ -31,7 +31,7 @@ class DownloadMusicsController < ApplicationController
         license = current_user.licenses.find(params[:download_id])
         card = license.license_group.card
         musics = card.musics
-        files = musics.map{ |music| [music.music_flac, "#{music.title} - #{music.artist_name}.flac"] }
+        files = musics.map{ |music| [music.music_flac, "#{music.track_number} - #{music.title} - #{music.artist_name}.flac"] }
         zipline(files, "#{card.title}-flac.zip")
       }
     end
