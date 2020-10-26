@@ -13,6 +13,9 @@
         <tbody>
         <%@musics.each do |music|%>
           <tr>
+            <td width="50">
+              <span style="font-weight: bold;"><%=music.track_number%></span>
+            </td>
             <td><%#=music.music.filename.to_s%>
               <div>
                 <span style="font-weight: bold;"><%=music.title%></span><br>
