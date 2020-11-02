@@ -6,6 +6,14 @@ https://www.share-cards.com/
 
 ## 概要
 音楽やイラストなどのダウンロードできる機能を有したカード(ダウンロードカード)を、作成できると言うサービスになっております。
+音楽や絵などのクリエイターが自らのデジタルデータの創作物を、同人即売会(コミケ)などのイベントで販売する為に作成しました。
+
+## 使い方
+・クリエイター側
+https://www.share-cards.com/use_make_card
+
+・視聴者側
+https://www.share-cards.com/use_card
 
 ## ER図
 レポジトリー内のerb.pdf参照
