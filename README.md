@@ -28,7 +28,7 @@ https://www.share-cards.com/use_card
 - Sidekiq
 - ffmpeg
 - Heroku
-
+![image](https://user-images.githubusercontent.com/61904065/98067492-022af300-1e9d-11eb-91ee-c691a431a5dc.png)
 
 # ローカルでの環境構築
 ### バージョン情報
