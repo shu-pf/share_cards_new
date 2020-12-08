@@ -1,5 +1,6 @@
 # ShareCards
 自宅で簡単にダウンロードカード作成！
+※試用の為のアカウントを作成しました。下記に記載しています。
 
 ## URL
 https://www.share-cards.com/
@@ -9,6 +10,12 @@ https://www.share-cards.com/
 音楽や絵などのクリエイターが自らのデジタルデータの創作物を、同人即売会(コミケ)などのイベントで販売する為に作成しました。
 紹介画像
 ![ShareCardsについて](https://user-images.githubusercontent.com/61904065/101494180-577d8700-39aa-11eb-8266-38b8656a0f6f.png)
+
+## 試用アカウント
+email:shugoena.shuukatu☆gmail.com
+☆を@に変えてください
+password:shug☆123
+☆をoに変えてください
 
 ## 使い方
 ・クリエイター側
