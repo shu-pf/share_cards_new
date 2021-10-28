@@ -53,8 +53,23 @@ Ruby：ruby 2.6.6
 - Postgres
 
 #### 最初の起動時にする事
-環境変数の設定が必要  
-.envのファイルを貰ってアプリ直下に入れる。
+環境変数の設定が必要
+環境変数は自分のDropbox内で管理。
+
+bundle install
+```
+bundle install
+```
+
+データベースの作成
+```
+rails db:create
+```
+
+データベースへのマイグレーションの適応
+```
+rails db:migrate
+```
 
 #### 起動手順
 Redisの立ち上げ
@@ -71,6 +86,9 @@ Railsの立ち上げ
 ```
 $ rails s
 ```
+
+以下のURLにアクセス
+http://localhost:3000/
 
 ### herokuの場合の環境構築(書きかけ)
 heroku config:set MALLOC_ARENA_MAX=2
