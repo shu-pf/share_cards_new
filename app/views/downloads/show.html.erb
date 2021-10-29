@@ -77,4 +77,6 @@
   <button class="d-none" id="pause"><span class="material-icons">pause</span></button>
 </div>
 <%= javascript_pack_tag 'player', 'data-turbolinks-track': 'reload' %>
-<%= javascript_pack_tag 'downloader', 'data-turbolinks-track': 'reload' %>
+<%# TODO:CDNではなくてWEBpackerで読み込みたい %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js" integrity="sha512-xQBQYt9UcgblF6aCMrwU1NkVA7HCXaSN2oq0so80KO+y68M+n64FOcqgav4igHe6D5ObBLIf68DWv+gfBowczg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
