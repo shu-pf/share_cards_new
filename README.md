@@ -51,6 +51,7 @@ Ruby：ruby 2.6.6
 - FFmpeg
 - Redis
 - Postgres
+- imagemagick
 
 #### 最初の起動時にする事
 環境変数の設定が必要
