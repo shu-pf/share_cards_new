@@ -1,7 +1,23 @@
-console.log("<%= url_for(@musics[0].music_flac) %>");
-var zip = new JSZip();
-zip.file("Hello.txt", "Hello World\n");
-zip.generateAsync({type:"blob"})
-.then(function(content) {
-    saveAs(content, "example.zip");
+const spinner = document.getElementById("flac-download-spinner");
+spinner.className = "spinner-border spinner-border-sm";
+
+// Array[url, file_name]
+const files = <%=raw @files %>;
+
+const blobFetchs = files.map(function(file){
+  return fetch('<%= @files[0][0] %>')
+    .then(response => response.blob());
+});
+
+Promise.all(blobFetchs).then((blobs) => {
+  var zip = new JSZip();
+
+  blobs.forEach((blob ,index) => {
+    zip.file(files[index][1], blob);
+  });
+
+  zip.generateAsync({type:"blob"}).then(function(content) {
+    saveAs(content, "<%= @title %>");
+    spinner.className = "d-none";
+  });
 });

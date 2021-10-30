@@ -26,18 +26,10 @@ class DownloadMusicsController < ApplicationController
   end
 
   def flac_zip
-    # respond_to do |format|
-    #   format.zip {
-    #     license = current_user.licenses.find(params[:download_id])
-    #     card = license.license_group.card
-    #     musics = card.musics
-    #     files = musics.map{ |music| [music.music_flac, "#{music.track_number} - #{music.title} - #{music.artist_name}.flac"] }
-    #     zipline(files, "#{card.title}-flac.zip")
-    #   }
-    # end
     license = current_user.licenses.find(params[:download_id])
     card = license.license_group.card
-    @musics = card.musics
+    @title = card.title
+    @files = card.musics.map{ |music| [url_for(music.music_flac), "#{music.track_number}-#{music.title}-#{music.artist_name}.flac"] }
   end
 
   def show
