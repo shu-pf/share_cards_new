@@ -1,23 +1,27 @@
-const spinner = document.getElementById("mp3-download-spinner");
-spinner.className = "spinner-border spinner-border-sm";
+function mp3ZipGenerate() {
+  const spinner = document.getElementById("mp3-download-spinner");
+  spinner.className = "spinner-border spinner-border-sm";
 
-// Array[url, file_name]
-const files = <%=raw @files %>;
+  // Array[url, file_name]
+  const files = <%=raw @files %>;
 
-const blobFetchs = files.map(function(file){
-  return fetch('<%= @files[0][0] %>')
-    .then(response => response.blob());
-});
-
-Promise.all(blobFetchs).then((blobs) => {
-  var zip = new JSZip();
-
-  blobs.forEach((blob ,index) => {
-    zip.file(files[index][1], blob);
+  const blobFetchs = files.map(function(file){
+    return fetch('<%= @files[0][0] %>')
+      .then(response => response.blob());
   });
 
-  zip.generateAsync({type:"blob"}).then(function(content) {
-    saveAs(content, "<%= @title %>");
-    spinner.className = "d-none";
+  Promise.all(blobFetchs).then((blobs) => {
+    var zip = new JSZip();
+
+    blobs.forEach((blob ,index) => {
+      zip.file(files[index][1], blob);
+    });
+
+    zip.generateAsync({type:"blob"}).then(function(content) {
+      saveAs(content, "<%= @title %>-mp3");
+      spinner.className = "d-none";
+    });
   });
-});
+}
+
+mp3ZipGenerate();
