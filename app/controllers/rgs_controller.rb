@@ -45,6 +45,7 @@ class RgsController < ApplicationController
             license.increment!(:download_times)
             @card = license.license_group.card
             @title = @card.title
+            @contentfiles = @card.contents.map{ |content| [url_for(content.content), content.content.filename.to_s] }
             @files = @card.musics.map{ |music| [url_for(music.music_mp3), "#{music.track_number}-#{music.title}-#{music.artist_name}.mp3"] }
           else
             redirect_to rgs_url, alert: "ダウンロード回数を超過しました。ログインする事で制限を解除出来ます。"
