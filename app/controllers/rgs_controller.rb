@@ -39,11 +39,16 @@ class RgsController < ApplicationController
           redirect_to rgs_url, alert: "既に使用されたコードです"
         else
           # ライセンスの更新処理
-          
-          # ダウンロード処理
-          @card = license.license_group.card
-          @title = @card.title
-          @files = @card.musics.map{ |music| [url_for(music.music_mp3), "#{music.track_number}-#{music.title}-#{music.artist_name}.mp3"] }
+          @remaining_number = 3 - license.download_times;
+          if @remaining_number > 0
+            # ダウンロード処理
+            license.increment!(:download_times)
+            @card = license.license_group.card
+            @title = @card.title
+            @files = @card.musics.map{ |music| [url_for(music.music_mp3), "#{music.track_number}-#{music.title}-#{music.artist_name}.mp3"] }
+          else
+            redirect_to rgs_url, alert: "ダウンロード回数を超過しました。ログインする事で制限を解除出来ます。"
+          end
         end
       else
         redirect_to rgs_url, alert: "無効なシリアルコードです"
