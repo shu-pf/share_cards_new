@@ -1,4 +1,3 @@
-console.log('読み込まれました');
 var player_container = document.getElementById("player_container");
 var player_title = document.getElementById("player_title");
 var player_artist = document.getElementById("player_artist");
@@ -27,13 +26,11 @@ pause.onclick = function (){
 var scrollbar_glay = document.getElementById("scrollbar_glay");
 
 scrollbar_glay.onclick = function (e){
-  console.log(e.offsetX/scrollbar_glay.clientWidth);
   audio.currentTime = audio.duration * (e.offsetX/scrollbar_glay.clientWidth);
 };
 
 var scrollbar = document.getElementById("scrollbar");
 
 scrollbar.onclick = function (e){
-  console.log(e.offsetX/scrollbar_glay.clientWidth);
   audio.currentTime = audio.duration * (e.offsetX/scrollbar_glay.clientWidth);
 };

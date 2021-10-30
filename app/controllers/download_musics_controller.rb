@@ -2,39 +2,24 @@ class DownloadMusicsController < ApplicationController
   include Zipline
 
   def index
-    respond_to do |format|
-      format.zip {
-        license = current_user.licenses.find(params[:download_id])
-        card = license.license_group.card
-        musics = card.musics
-        files = musics.map{ |music| [music.music, "#{music.track_number} - #{music.title} - #{music.artist_name}.wav"] }
-        zipline(files, "#{card.title}-wav.zip")
-      }
-    end
+    license = current_user.licenses.find(params[:download_id])
+    card = license.license_group.card
+    @title = card.title
+    @files = card.musics.map{ |music| [url_for(music.music), "#{music.track_number}-#{music.title}-#{music.artist_name}.wav"] }
   end
 
   def mp3_zip
-    respond_to do |format|
-      format.zip {
-        license = current_user.licenses.find(params[:download_id])
-        card = license.license_group.card
-        musics = card.musics
-        files = musics.map{ |music| [music.music_mp3, "#{music.track_number} - #{music.title} - #{music.artist_name}.mp3"] }
-        zipline(files, "#{card.title}-mp3.zip")
-      }
-    end
+    license = current_user.licenses.find(params[:download_id])
+    card = license.license_group.card
+    @title = card.title
+    @files = card.musics.map{ |music| [url_for(music.music_mp3), "#{music.track_number}-#{music.title}-#{music.artist_name}.mp3"] }
   end
 
   def flac_zip
-    respond_to do |format|
-      format.zip {
-        license = current_user.licenses.find(params[:download_id])
-        card = license.license_group.card
-        musics = card.musics
-        files = musics.map{ |music| [music.music_flac, "#{music.track_number} - #{music.title} - #{music.artist_name}.flac"] }
-        zipline(files, "#{card.title}-flac.zip")
-      }
-    end
+    license = current_user.licenses.find(params[:download_id])
+    card = license.license_group.card
+    @title = card.title
+    @files = card.musics.map{ |music| [url_for(music.music_flac), "#{music.track_number}-#{music.title}-#{music.artist_name}.flac"] }
   end
 
   def show
