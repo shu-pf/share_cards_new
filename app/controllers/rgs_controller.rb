@@ -1,4 +1,6 @@
 class RgsController < ApplicationController
+  skip_before_action :authenticate_user!
+
   def index
     if params[:serial_code]
       serial_code =[] 
@@ -14,18 +16,44 @@ class RgsController < ApplicationController
   def rgs
     serial_codes = SerialTmp.new(serial_params)
     serial_code = serial_codes.serial_code1 + serial_codes.serial_code2 + serial_codes.serial_code3 + serial_codes.serial_code4
-    if License.where(serial_code: serial_code).exists?
-      license = License.find_by(serial_code: serial_code)
-      if license.user_id?
-        redirect_to rgs_url, alert: "既に使用されたコードです"
-      else
-        # ライセンスの更新処理
+    if current_user
+      # ログイン状態の場合
+      if License.where(serial_code: serial_code).exists?
         license = License.find_by(serial_code: serial_code)
-        license.update(user_id: current_user.id)
-        redirect_to downloads_url, notice: "「#{license.license_group.card.title}」を登録しました。詳細ページからダウンロード出来ます。"
+        if license.user_id?
+          redirect_to rgs_url, alert: "既に使用されたコードです"
+        else
+          # ライセンスの更新処理
+          license = License.find_by(serial_code: serial_code)
+          license.update(user_id: current_user.id)
+          redirect_to downloads_url, notice: "「#{license.license_group.card.title}」を登録しました。詳細ページからダウンロード出来ます。"
+        end
+      else
+        redirect_to rgs_url, alert: "無効なシリアルコードです"
       end
     else
-      redirect_to rgs_url, alert: "無効なシリアルコードです"
+      # ログイン状態でない場合
+      if License.where(serial_code: serial_code).exists?
+        license = License.find_by(serial_code: serial_code)
+        if license.user_id?
+          redirect_to rgs_url, alert: "既に使用されたコードです"
+        else
+          # ライセンスの更新処理
+          @remaining_number = 3 - license.download_times;
+          if @remaining_number > 0
+            # ダウンロード処理
+            license.increment!(:download_times)
+            @card = license.license_group.card
+            @title = @card.title
+            @contentfiles = @card.contents.map{ |content| [url_for(content.content), content.content.filename.to_s] }
+            @files = @card.musics.map{ |music| [url_for(music.music_mp3), "#{music.track_number}-#{music.title}-#{music.artist_name}.mp3"] }
+          else
+            redirect_to rgs_url, alert: "ダウンロード回数を超過しました。ログインする事で制限を解除出来ます。"
+          end
+        end
+      else
+        redirect_to rgs_url, alert: "無効なシリアルコードです"
+      end
     end
   end
 
