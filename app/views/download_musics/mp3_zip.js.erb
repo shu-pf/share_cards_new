@@ -6,7 +6,7 @@ function mp3ZipGenerate() {
   const files = <%=raw @files %>;
 
   const blobFetchs = files.map(function(file){
-    return fetch('<%= @files[0][0] %>')
+    return fetch(file[0])
       .then(response => response.blob());
   });
 
